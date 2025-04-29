@@ -2341,5 +2341,967 @@
             </div>
         </div>
     </div>
+
+    <h1>NeuroLight Additional Features</h1>
+    
+    <!-- Resource Library Section -->
+    <div class="section" id="resource-library-section">
+        <h2>Resource Library</h2>
+        <p>A variety of built-in therapy materials (worksheets, visual supports, strategies).</p>
+        
+        <div class="view-toggle">
+            <button class="view-toggle-btn active" onclick="toggleView('resource-library', 'mobile')">Mobile View</button>
+            <button class="view-toggle-btn" onclick="toggleView('resource-library', 'web')">Web View</button>
+        </div>
+        
+        <div class="design-container">
+            <!-- Mobile View -->
+            <div class="device mobile" id="resource-library-mobile">
+                <h3>Mobile Resource Library</h3>
+                <div class="screen">
+                    <div class="interface">
+                        <div class="header">
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <div style="font-size: 1.2rem;">←</div>
+                                <div>Resource Library</div>
+                            </div>
+                            <div>🔍</div>
+                        </div>
+                        
+                        <div style="padding: 15px; height: calc(100% - 60px); overflow-y: auto;">
+                            <div class="search" style="margin-bottom: 15px;">Search resources...</div>
+                            
+                            <div style="display: flex; gap: 10px; overflow-x: auto; padding-bottom: 10px; margin-bottom: 15px;">
+                                <div style="background: rgba(106, 90, 205, 0.1); border-radius: 20px; padding: 8px 15px; font-size: 0.9rem; white-space: nowrap;">All</div>
+                                <div style="background: white; border-radius: 20px; padding: 8px 15px; font-size: 0.9rem; white-space: nowrap; border: 1px solid #eee;">Worksheets</div>
+                                <div style="background: white; border-radius: 20px; padding: 8px 15px; font-size: 0.9rem; white-space: nowrap; border: 1px solid #eee;">Visuals</div>
+                                <div style="background: white; border-radius: 20px; padding: 8px 15px; font-size: 0.9rem; white-space: nowrap; border: 1px solid #eee;">Strategies</div>
+                                <div style="background: white; border-radius: 20px; padding: 8px 15px; font-size: 0.9rem; white-space: nowrap; border: 1px solid #eee;">Activities</div>
+                            </div>
+                            
+                            <div class="resource-card">
+                                <div class="resource-icon">📝</div>
+                                <div class="resource-info">
+                                    <div style="font-weight: 600;">Emotion Identification Worksheets</div>
+                                    <div style="font-size: 0.8rem; color: var(--mid);">For ages 5-12 • PDF • 12 pages</div>
+                                </div>
+                                <div class="resource-actions">
+                                    <div style="width: 30px; height: 30px; background: rgba(106, 90, 205, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center;">↓</div>
+                                </div>
+                            </div>
+                            
+                            <div class="resource-card">
+                                <div class="resource-icon">🖼️</div>
+                                <div class="resource-info">
+                                    <div style="font-weight: 600;">Visual Schedule Templates</div>
+                                    <div style="font-size: 0.8rem; color: var(--mid);">Customizable • PDF • 8 templates</div>
+                                </div>
+                                <div class="resource-actions">
+                                    <div style="width: 30px; height: 30px; background: rgba(106, 90, 205, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center;">↓</div>
+                                </div>
+                            </div>
+                            
+                            <div class="resource-card">
+                                <div class="resource-icon">🧩</div>
+                                <div class="resource-info">
+                                    <div style="font-weight: 600;">Social Story Builder</div>
+                                    <div style="font-size: 0.8rem; color: var(--mid);">Interactive tool • Customizable</div>
+                                </div>
+                                <div class="resource-actions">
+                                    <div style="width: 30px; height: 30px; background: rgba(106, 90, 205, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center;">▶</div>
+                                </div>
+                            </div>
+                            
+                            <div class="resource-card">
+                                <div class="resource-icon">🗣️</div>
+                                <div class="resource-info">
+                                    <div style="font-weight: 600;">Articulation Exercises</div>
+                                    <div style="font-size: 0.8rem; color: var(--mid);">For speech development • 15 exercises</div>
+                                </div>
+                                <div class="resource-actions">
+                                    <div style="width: 30px; height: 30px; background: rgba(106, 90, 205, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center;">↓</div>
+                                </div>
+                            </div>
+                            
+                            <div class="resource-card">
+                                <div class="resource-icon">🧠</div>
+                                <div class="resource-info">
+                                    <div style="font-weight: 600;">Cognitive Exercises</div>
+                                    <div style="font-size: 0.8rem; color: var(--mid);">Memory & attention • 20 activities</div>
+                                </div>
+                                <div class="resource-actions">
+                                    <div style="width: 30px; height: 30px; background: rgba(106, 90, 205, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center;">↓</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p>Scrollable resource library with filtering options</p>
+            </div>
+            
+            <!-- Web View -->
+            <div class="device web hidden" id="resource-library-web">
+                <h3>Web Resource Library</h3>
+                <div class="screen">
+                    <div class="interface">
+                        <div class="web-layout">
+                            <div class="sidebar">
+                                <div class="logo" style="margin-bottom: 30px;">
+                                    <div class="logo-icon">N</div>
+                                    <div style="font-size: 1.2rem; font-weight: 600;">NeuroLight</div>
+                                </div>
+                                
+                                <div style="margin-bottom: 20px;">
+                                    <div class="menu-item">
+                                        <div class="menu-icon"></div>
+                                        <div>Dashboard</div>
+                                    </div>
+                                    <div class="menu-item active">
+                                        <div class="menu-icon"></div>
+                                        <div>Resource Library</div>
+                                    </div>
+                                    <div class="menu-item">
+                                        <div class="menu-icon"></div>
+                                        <div>AI Generator</div>
+                                    </div>
+                                    <div class="menu-item">
+                                        <div class="menu-icon"></div>
+                                        <div>Community</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="content">
+                                <div class="toolbar" style="justify-content: space-between;">
+                                    <div style="font-weight: 600; font-size: 1.2rem;">Resource Library</div>
+                                    <div class="search" style="max-width: 300px;">Search resources...</div>
+                                </div>
+                                
+                                <div style="padding: 20px;">
+                                    <div style="display: flex; gap: 15px; margin-bottom: 20px;">
+                                        <div style="background: rgba(106, 90, 205, 0.1); border-radius: 20px; padding: 8px 15px; font-size: 0.9rem;">All Resources</div>
+                                        <div style="background: white; border-radius: 20px; padding: 8px 15px; font-size: 0.9rem; border: 1px solid #eee;">Worksheets</div>
+                                        <div style="background: white; border-radius: 20px; padding: 8px 15px; font-size: 0.9rem; border: 1px solid #eee;">Visual Supports</div>
+                                        <div style="background: white; border-radius: 20px; padding: 8px 15px; font-size: 0.9rem; border: 1px solid #eee;">Strategies</div>
+                                        <div style="background: white; border-radius: 20px; padding: 8px 15px; font-size: 0.9rem; border: 1px solid #eee;">Activities</div>
+                                    </div>
+                                    
+                                    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px;">
+                                        <div class="resource-card">
+                                            <div class="resource-icon">📝</div>
+                                            <div class="resource-info">
+                                                <div style="font-weight: 600;">Emotion Identification Worksheets</div>
+                                                <div style="font-size: 0.8rem; color: var(--mid);">For ages 5-12 • PDF • 12 pages</div>
+                                                <div style="display: flex; gap: 5px; margin-top: 5px;">
+                                                    <div style="background: rgba(106, 90, 205, 0.1); border-radius: 4px; padding: 2px 5px; font-size: 0.7rem;">ASD</div>
+                                                    <div style="background: rgba(106, 90, 205, 0.1); border-radius: 4px; padding: 2px 5px; font-size: 0.7rem;">SEL</div>
+                                                </div>
+                                            </div>
+                                            <div class="resource-actions">
+                                                <div style="width: 30px; height: 30px; background: rgba(106, 90, 205, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center;">↓</div>
+                                                <div style="width: 30px; height: 30px; background: rgba(106, 90, 205, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center;">❤️</div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="resource-card">
+                                            <div class="resource-icon">🖼️</div>
+                                            <div class="resource-info">
+                                                <div style="font-weight: 600;">Visual Schedule Templates</div>
+                                                <div style="font-size: 0.8rem; color: var(--mid);">Customizable • PDF • 8 templates</div>
+                                                <div style="display: flex; gap: 5px; margin-top: 5px;">
+                                                    <div style="background: rgba(106, 90, 205, 0.1); border-radius: 4px; padding: 2px 5px; font-size: 0.7rem;">Routine</div>
+                                                    <div style="background: rgba(106, 90, 205, 0.1); border-radius: 4px; padding: 2px 5px; font-size: 0.7rem;">ASD</div>
+                                                </div>
+                                            </div>
+                                            <div class="resource-actions">
+                                                <div style="width: 30px; height: 30px; background: rgba(106, 90, 205, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center;">↓</div>
+                                                <div style="width: 30px; height: 30px; background: rgba(106, 90, 205, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center;">❤️</div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="resource-card">
+                                            <div class="resource-icon">🧩</div>
+                                            <div class="resource-info">
+                                                <div style="font-weight: 600;">Social Story Builder</div>
+                                                <div style="font-size: 0.8rem; color: var(--mid);">Interactive tool • Customizable</div>
+                                                <div style="display: flex; gap: 5px; margin-top: 5px;">
+                                                    <div style="background: rgba(106, 90, 205, 0.1); border-radius: 4px; padding: 2px 5px; font-size: 0.7rem;">ASD</div>
+                                                    <div style="background: rgba(106, 90, 205, 0.1); border-radius: 4px; padding: 2px 5px; font-size: 0.7rem;">Tool</div>
+                                                </div>
+                                            </div>
+                                            <div class="resource-actions">
+                                                <div style="width: 30px; height: 30px; background: rgba(106, 90, 205, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center;">▶</div>
+                                                <div style="width: 30px; height: 30px; background: rgba(106, 90, 205, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center;">❤️</div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="resource-card">
+                                            <div class="resource-icon">🗣️</div>
+                                            <div class="resource-info">
+                                                <div style="font-weight: 600;">Articulation Exercises</div>
+                                                <div style="font-size: 0.8rem; color: var(--mid);">For speech development • 15 exercises</div>
+                                                <div style="display: flex; gap: 5px; margin-top: 5px;">
+                                                    <div style="background: rgba(106, 90, 205, 0.1); border-radius: 4px; padding: 2px 5px; font-size: 0.7rem;">Speech</div>
+                                                    <div style="background: rgba(106, 90, 205, 0.1); border-radius: 4px; padding: 2px 5px; font-size: 0.7rem;">Exercises</div>
+                                                </div>
+                                            </div>
+                                            <div class="resource-actions">
+                                                <div style="width: 30px; height: 30px; background: rgba(106, 90, 205, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center;">↓</div>
+                                                <div style="width: 30px; height: 30px; background: rgba(106, 90, 205, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center;">❤️</div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="resource-card">
+                                            <div class="resource-icon">🧠</div>
+                                            <div class="resource-info">
+                                                <div style="font-weight: 600;">Cognitive Exercises</div>
+                                                <div style="font-size: 0.8rem; color: var(--mid);">Memory & attention • 20 activities</div>
+                                                <div style="display: flex; gap: 5px; margin-top: 5px;">
+                                                    <div style="background: rgba(106, 90, 205, 0.1); border-radius: 4px; padding: 2px 5px; font-size: 0.7rem;">Cognition</div>
+                                                    <div style="background: rgba(106, 90, 205, 0.1); border-radius: 4px; padding: 2px 5px; font-size: 0.7rem;">ADHD</div>
+                                                </div>
+                                            </div>
+                                            <div class="resource-actions">
+                                                <div style="width: 30px; height: 30px; background: rgba(106, 90, 205, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center;">↓</div>
+                                                <div style="width: 30px; height: 30px; background: rgba(106, 90, 205, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center;">❤️</div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="resource-card">
+                                            <div class="resource-icon">👥</div>
+                                            <div class="resource-info">
+                                                <div style="font-weight: 600;">Social Skills Activities</div>
+                                                <div style="font-size: 0.8rem; color: var(--mid);">Group exercises • 10 scenarios</div>
+                                                <div style="display: flex; gap: 5px; margin-top: 5px;">
+                                                    <div style="background: rgba(106, 90, 205, 0.1); border-radius: 4px; padding: 2px 5px; font-size: 0.7rem;">Social</div>
+                                                    <div style="background: rgba(106, 90, 205, 0.1); border-radius: 4px; padding: 2px 5px; font-size: 0.7rem;">ASD</div>
+                                                </div>
+                                            </div>
+                                            <div class="resource-actions">
+                                                <div style="width: 30px; height: 30px; background: rgba(106, 90, 205, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center;">↓</div>
+                                                <div style="width: 30px; height: 30px; background: rgba(106, 90, 205, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center;">❤️</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p>Grid layout for resource library with detailed filtering options</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- AI Generator Section -->
+    <div class="section" id="ai-generator-section">
+        <h2>AI-Generated Custom Resources</h2>
+        <p>Users input specific needs, and the AI generates personalized, downloadable therapy resources.</p>
+        
+        <div class="view-toggle">
+            <button class="view-toggle-btn active" onclick="toggleView('ai-generator', 'mobile')">Mobile View</button>
+            <button class="view-toggle-btn" onclick="toggleView('ai-generator', 'web')">Web View</button>
+        </div>
+        
+        <div class="design-container">
+            <!-- Mobile View -->
+            <div class="device mobile" id="ai-generator-mobile">
+                <h3>Mobile AI Generator</h3>
+                <div class="screen">
+                    <div class="interface">
+                        <div class="header">
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <div style="font-size: 1.2rem;">←</div>
+                                <div>AI Resource Generator</div>
+                            </div>
+                            <div>ℹ️</div>
+                        </div>
+                        
+                        <div style="padding: 15px; height: calc(100% - 60px); overflow-y: auto;">
+                            <div class="ai-generator">
+                                <div style="font-weight: 600; margin-bottom: 15px;">Create Custom Resources</div>
+                                
+                                <div class="form-row">
+                                    <div class="form-label">Resource Type</div>
+                                    <div class="form-input">Select type...</div>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-label">Age Group</div>
+                                    <div class="form-input">Select age...</div>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-label">Specific Needs</div>
+                                    <div class="form-input">Describe what you need...</div>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-label">Learning Style</div>
+                                    <div class="form-input">Visual, Auditory, Kinesthetic</div>
+                                </div>
+                                
+                                <div class="button" style="width: 100%; margin-top: 15px;">Generate Resource</div>
+                            </div>
+                            
+                            <div style="margin-top: 20px;">
+                                <div style="font-weight: 600; margin-bottom: 10px;">Recent Generations</div>
+                                
+                                <div class="resource-card">
+                                    <div class="resource-icon">📝</div>
+                                    <div class="resource-info">
+                                        <div style="font-weight: 600;">Emotion Cards - Sam</div>
+                                        <div style="font-size: 0.8rem; color: var(--mid);">Generated 2 days ago • PDF</div>
+                                    </div>
+                                    <div class="resource-actions">
+                                        <div style="width: 30px; height: 30px; background: rgba(106, 90, 205, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center;">↓</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="resource-card">
+                                    <div class="resource-icon">🖼️</div>
+                                    <div class="resource-info">
+                                        <div style="font-weight: 600;">Morning Routine Visual</div>
+                                        <div style="font-size: 0.8rem; color: var(--mid);">Generated 1 week ago • PDF</div>
+                                    </div>
+                                    <div class="resource-actions">
+                                        <div style="width: 30px; height: 30px; background: rgba(106, 90, 205, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center;">↓</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p>AI resource generator with form inputs and history</p>
+            </div>
+            
+            <!-- Web View -->
+            <div class="device web hidden" id="ai-generator-web">
+                <h3>Web AI Generator</h3>
+                <div class="screen">
+                    <div class="interface">
+                        <div class="web-layout">
+                            <div class="sidebar">
+                                <div class="logo" style="margin-bottom: 30px;">
+                                    <div class="logo-icon">N</div>
+                                    <div style="font-size: 1.2rem; font-weight: 600;">NeuroLight</div>
+                                </div>
+                                
+                                <div style="margin-bottom: 20px;">
+                                    <div class="menu-item">
+                                        <div class="menu-icon"></div>
+                                        <div>Dashboard</div>
+                                    </div>
+                                    <div class="menu-item">
+                                        <div class="menu-icon"></div>
+                                        <div>Resource Library</div>
+                                    </div>
+                                    <div class="menu-item active">
+                                        <div class="menu-icon"></div>
+                                        <div>AI Generator</div>
+                                    </div>
+                                    <div class="menu-item">
+                                        <div class="menu-icon"></div>
+                                        <div>Community</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="content">
+                                <div class="toolbar" style="justify-content: space-between;">
+                                    <div style="font-weight: 600; font-size: 1.2rem;">AI Resource Generator</div>
+                                    <div style="color: var(--primary); font-weight: 600;">How it works</div>
+                                </div>
+                                
+                                <div style="padding: 20px;">
+                                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                                        <div class="ai-generator">
+                                            <div style="font-weight: 600; font-size: 1.1rem; margin-bottom: 20px;">Create Custom Resource</div>
+                                            
+                                            <div class="form-row">
+                                                <div class="form-label">Resource Type</div>
+                                                <div class="form-input">Worksheet, Visual Support, Activity, etc.</div>
+                                            </div>
+                                            
+                                            <div class="form-row">
+                                                <div class="form-label">For Whom</div>
+                                                <div class="form-input">Select profile or enter details...</div>
+                                            </div>
+                                            
+                                            <div class="form-row">
+                                                <div class="form-label">Specific Goals</div>
+                                                <div class="form-input">Describe the skills or behaviors to target</div>
+                                            </div>
+                                            
+                                            <div class="form-row">
+                                                <div class="form-label">Preferred Format</div>
+                                                <div class="form-input">PDF, Interactive, Video, etc.</div>
+                                            </div>
+                                            
+                                            <div class="form-row">
+                                                <div class="form-label">Additional Notes</div>
+                                                <div class="form-input" style="height: 80px;">Any special requirements...</div>
+                                            </div>
+                                            
+                                            <div class="button" style="width: 100%; margin-top: 20px;">Generate Resource</div>
+                                        </div>
+                                        
+                                        <div>
+                                            <div style="font-weight: 600; font-size: 1.1rem; margin-bottom: 20px;">Recent Generations</div>
+                                            
+                                            <div class="resource-card">
+                                                <div class="resource-icon">📝</div>
+                                                <div class="resource-info">
+                                                    <div style="font-weight: 600;">Emotion Identification - Sam</div>
+                                                    <div style="font-size: 0.8rem; color: var(--mid);">Generated 2 days ago • PDF • 5 pages</div>
+                                                    <div style="display: flex; gap: 5px; margin-top: 5px;">
+                                                        <div style="background: rgba(106, 90, 205, 0.1); border-radius: 4px; padding: 2px 5px; font-size: 0.7rem;">ASD</div>
+                                                        <div style="background: rgba(106, 90, 205, 0.1); border-radius: 4px; padding: 2px 5px; font-size: 0.7rem;">Emotions</div>
+                                                    </div>
+                                                </div>
+                                                <div class="resource-actions">
+                                                    <div style="width: 30px; height: 30px; background: rgba(106, 90, 205, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center;">↓</div>
+                                                    <div style="width: 30px; height: 30px; background: rgba(106, 90, 205, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center;">🔄</div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="resource-card">
+                                                <div class="resource-icon">🖼️</div>
+                                                <div class="resource-info">
+                                                    <div style="font-weight: 600;">Morning Routine Visual Schedule</div>
+                                                    <div style="font-size: 0.8rem; color: var(--mid);">Generated 1 week ago • PDF • Custom</div>
+                                                    <div style="display: flex; gap: 5px; margin-top: 5px;">
+                                                        <div style="background: rgba(106, 90, 205, 0.1); border-radius: 4px; padding: 2px 5px; font-size: 0.7rem;">Routine</div>
+                                                        <div style="background: rgba(106, 90, 205, 0.1); border-radius: 4px; padding: 2px 5px; font-size: 0.7rem;">Visual</div>
+                                                    </div>
+                                                </div>
+                                                <div class="resource-actions">
+                                                    <div style="width: 30px; height: 30px; background: rgba(106, 90, 205, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center;">↓</div>
+                                                    <div style="width: 30px; height: 30px; background: rgba(106, 90, 205, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center;">🔄</div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="resource-card">
+                                                <div class="resource-icon">🧩</div>
+                                                <div class="resource-info">
+                                                    <div style="font-weight: 600;">Social Story: Going to Dentist</div>
+                                                    <div style="font-size: 0.8rem; color: var(--mid);">Generated 2 weeks ago • PDF • 8 pages</div>
+                                                    <div style="display: flex; gap: 5px; margin-top: 5px;">
+                                                        <div style="background: rgba(106, 90, 205, 0.1); border-radius: 4px; padding: 2px 5px; font-size: 0.7rem;">Social</div>
+                                                        <div style="background: rgba(106, 90, 205, 0.1); border-radius: 4px; padding: 2px 5px; font-size: 0.7rem;">Anxiety</div>
+                                                    </div>
+                                                </div>
+                                                <div class="resource-actions">
+                                                    <div style="width: 30px; height: 30px; background: rgba(106, 90, 205, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center;">↓</div>
+                                                    <div style="width: 30px; height: 30px; background: rgba(106, 90, 205, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center;">🔄</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p>Advanced AI generator with detailed options and generation history</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Subscription Model Section -->
+    <div class="section" id="subscription-section">
+        <h2>Subscription Model</h2>
+        <p>Payment integration for different user types (SLTs, businesses, families).</p>
+        
+        <div class="view-toggle">
+            <button class="view-toggle-btn active" onclick="toggleView('subscription', 'mobile')">Mobile View</button>
+            <button class="view-toggle-btn" onclick="toggleView('subscription', 'web')">Web View</button>
+        </div>
+        
+        <div class="design-container">
+            <!-- Mobile View -->
+            <div class="device mobile" id="subscription-mobile">
+                <h3>Mobile Subscription</h3>
+                <div class="screen">
+                    <div class="interface">
+                        <div class="header">
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <div style="font-size: 1.2rem;">←</div>
+                                <div>Choose Your Plan</div>
+                            </div>
+                            <div>ℹ️</div>
+                        </div>
+                        
+                        <div style="padding: 15px; height: calc(100% - 60px); overflow-y: auto;">
+                            <div class="subscription-card" style="border: 2px solid var(--primary);">
+                                <div style="text-align: center;">
+                                    <div style="font-weight: 600; font-size: 1.2rem; color: var(--primary);">Family Plan</div>
+                                    <div style="font-size: 1.5rem; font-weight: 600; margin: 10px 0;">£9.99<span style="font-size: 0.9rem; color: var(--mid);">/month</span></div>
+                                </div>
+                                
+                                <div class="subscription-features">
+                                    <div class="subscription-feature">
+                                        <div>✓</div>
+                                        <div>Access to basic resources</div>
+                                    </div>
+                                    <div class="subscription-feature">
+                                        <div>✓</div>
+                                        <div>5 AI generations per month</div>
+                                    </div>
+                                    <div class="subscription-feature">
+                                        <div>✓</div>
+                                        <div>Up to 3 profiles</div>
+                                    </div>
+                                    <div class="subscription-feature">
+                                        <div>✓</div>
+                                        <div>Basic community access</div>
+                                    </div>
+                                </div>
+                                
+                                
+                            </div>
+                            <div class="button" style="width: 100%; margin-top: 10px;margin-right: -30px;">Select Plan</div>
+                            <div>
+                            </br>
+                            </div>
+
+                            <div class="subscription-card" style="border: 2px solid var(--primary);">
+                                <div style="text-align: center;">
+                                    <div style="font-weight: 600; font-size: 1.2rem;">Professional Plan</div>
+                                    <div style="font-size: 1.5rem; font-weight: 600; margin: 10px 0;">£24.99<span style="font-size: 0.9rem; color: var(--mid);">/month</span></div>
+                                </div>
+                                
+                                <div class="subscription-features">
+                                    <div class="subscription-feature">
+                                        <div>✓</div>
+                                        <div>Full resource library access</div>
+                                    </div>
+                                    <div class="subscription-feature">
+                                        <div>✓</div>
+                                        <div>20 AI generations per month</div>
+                                    </div>
+                                    <div class="subscription-feature">
+                                        <div>✓</div>
+                                        <div>Unlimited profiles</div>
+                                    </div>
+                                    <div class="subscription-feature">
+                                        <div>✓</div>
+                                        <div>Professional community access</div>
+                                    </div>
+                                    <div class="subscription-feature">
+                                        <div>✓</div>
+                                        <div>Client management tools</div>
+                                    </div>
+                                </div>
+                                
+                         
+                            </div>
+                            <div class="button" style="width: 100%; margin-top: 10px;margin-right: -30px;">Select Plan</div>
+                            <div>
+                            </br>
+                            </div>
+                            
+                            <div class="subscription-card" style="border: 2px solid var(--primary);">
+                                <div style="text-align: center;">
+                                    <div style="font-weight: 600; font-size: 1.2rem;">Enterprise Plan</div>
+                                    <div style="font-size: 1.5rem; font-weight: 600; margin: 10px 0;">£99.99<span style="font-size: 0.9rem; color: var(--mid);">/month</span></div>
+                                </div>
+                                
+                                <div class="subscription-features">
+                                    <div class="subscription-feature">
+                                        <div>✓</div>
+                                        <div>Everything in Professional</div>
+                                    </div>
+                                    <div class="subscription-feature">
+                                        <div>✓</div>
+                                        <div>Unlimited AI generations</div>
+                                    </div>
+                                    <div class="subscription-feature">
+                                        <div>✓</div>
+                                        <div>Team collaboration</div>
+                                    </div>
+                                    <div class="subscription-feature">
+                                        <div>✓</div>
+                                        <div>Organization analytics</div>
+                                    </div>
+                                    <div class="subscription-feature">
+                                        <div>✓</div>
+                                        <div>Priority support</div>
+                                    </div>
+                                </div>
+                                
+                         
+                            </div>
+                            <div class="button" style="width: 100%; margin-top: 10px;margin-right: -30px;">Select Plan</div>
+                            
+                            <div style="text-align: center; margin-top: 15px; font-size: 0.9rem; color: var(--mid);">
+                                Already subscribed? <span style="color: var(--primary); font-weight: 600;">Restore purchases</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p>Subscription options with tiered features and pricing</p>
+            </div>
+            
+            <!-- Web View -->
+            <div class="device web hidden" id="subscription-web">
+                <h3>Web Subscription</h3>
+                <div class="screen">
+                    <div class="interface">
+                        <div class="web-layout">
+                            <div class="sidebar">
+                                <div class="logo" style="margin-bottom: 30px;">
+                                    <div class="logo-icon">N</div>
+                                    <div style="font-size: 1.2rem; font-weight: 600;">NeuroLight</div>
+                                </div>
+                                
+                                <div style="margin-bottom: 20px;">
+                                    <div class="menu-item">
+                                        <div class="menu-icon"></div>
+                                        <div>Dashboard</div>
+                                    </div>
+                                    <div class="menu-item">
+                                        <div class="menu-icon"></div>
+                                        <div>Resource Library</div>
+                                    </div>
+                                    <div class="menu-item">
+                                        <div class="menu-icon"></div>
+                                        <div>AI Generator</div>
+                                    </div>
+                                    <div class="menu-item">
+                                        <div class="menu-icon"></div>
+                                        <div>Community</div>
+                                    </div>
+                                    <div class="menu-item active">
+                                        <div class="menu-icon"></div>
+                                        <div>Subscription</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="content">
+                                <div class="toolbar" style="justify-content: space-between;">
+                                    <div style="font-weight: 600; font-size: 1.2rem;">Choose Your Plan</div>
+                                    <div style="color: var(--primary); font-weight: 600;">Compare plans</div>
+                                </div>
+                                
+                                <div style="padding: 20px;">
+                                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 30px;">
+                                        <div class="subscription-card">
+                                            <div style="text-align: center;">
+                                                <div style="font-weight: 600; font-size: 1.1rem; margin-bottom: 5px;">Family</div>
+                                                <div style="font-size: 1.3rem; font-weight: 600; margin: 10px 0;">£9.99<span style="font-size: 0.9rem; color: var(--mid);">/month</span></div>
+                                                <div style="font-size: 0.8rem; color: var(--mid); margin-bottom: 15px;">For parents & caregivers</div>
+                                            </div>
+                                            
+                                            <div class="subscription-features">
+                                                <div class="subscription-feature">
+                                                    <div>✓</div>
+                                                    <div>Basic resources</div>
+                                                </div>
+                                                <div class="subscription-feature">
+                                                    <div>✓</div>
+                                                    <div>5 AI generations/month</div>
+                                                </div>
+                                                <div class="subscription-feature">
+                                                    <div>✓</div>
+                                                    <div>3 profiles</div>
+                                                </div>
+                                                <div class="subscription-feature">
+                                                    <div>✓</div>
+                                                    <div>Basic community</div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="button" style="width: 100%; margin-top: 15px;">Get Started</div>
+                                        </div>
+                                        
+                                        <div class="subscription-card" style="border: 2px solid var(--primary); position: relative;">
+                                            <div style="position: absolute; top: -10px; left: 50%; transform: translateX(-50%); background: var(--primary); color: white; padding: 3px 10px; border-radius: 10px; font-size: 0.7rem; font-weight: 600;">MOST POPULAR</div>
+                                            <div style="text-align: center;">
+                                                <div style="font-weight: 600; font-size: 1.1rem; margin-bottom: 5px; color: var(--primary);">Professional</div>
+                                                <div style="font-size: 1.3rem; font-weight: 600; margin: 10px 0;">£24.99<span style="font-size: 0.9rem; color: var(--mid);">/month</span></div>
+                                                <div style="font-size: 0.8rem; color: var(--mid); margin-bottom: 15px;">For SLTs & educators</div>
+                                            </div>
+                                            
+                                            <div class="subscription-features">
+                                                <div class="subscription-feature">
+                                                    <div>✓</div>
+                                                    <div>Full resource library</div>
+                                                </div>
+                                                <div class="subscription-feature">
+                                                    <div>✓</div>
+                                                    <div>20 AI generations/month</div>
+                                                </div>
+                                                <div class="subscription-feature">
+                                                    <div>✓</div>
+                                                    <div>Unlimited profiles</div>
+                                                </div>
+                                                <div class="subscription-feature">
+                                                    <div>✓</div>
+                                                    <div>Professional community</div>
+                                                </div>
+                                                <div class="subscription-feature">
+                                                    <div>✓</div>
+                                                    <div>Client management</div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="button" style="width: 100%; margin-top: 15px;">Get Started</div>
+                                        </div>
+                                        
+                                        <div class="subscription-card">
+                                            <div style="text-align: center;">
+                                                <div style="font-weight: 600; font-size: 1.1rem; margin-bottom: 5px;">Enterprise</div>
+                                                <div style="font-size: 1.3rem; font-weight: 600; margin: 10px 0;">£99.99<span style="font-size: 0.9rem; color: var(--mid);">/month</span></div>
+                                                <div style="font-size: 0.8rem; color: var(--mid); margin-bottom: 15px;">For clinics & schools</div>
+                                            </div>
+                                            
+                                            <div class="subscription-features">
+                                                <div class="subscription-feature">
+                                                    <div>✓</div>
+                                                    <div>Everything in Professional</div>
+                                                </div>
+                                                <div class="subscription-feature">
+                                                    <div>✓</div>
+                                                    <div>Unlimited AI generations</div>
+                                                </div>
+                                                <div class="subscription-feature">
+                                                    <div>✓</div>
+                                                    <div>Team collaboration</div>
+                                                </div>
+                                                <div class="subscription-feature">
+                                                    <div>✓</div>
+                                                    <div>Organization analytics</div>
+                                                </div>
+                                                <div class="subscription-feature">
+                                                    <div>✓</div>
+                                                    <div>Priority support</div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="button" style="width: 100%; margin-top: 15px;">Contact Sales</div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div style="background: white; border-radius: var(--border-radius); padding: 20px; box-shadow: var(--shadow);">
+                                        <div style="font-weight: 600; margin-bottom: 15px;">Frequently Asked Questions</div>
+                                        
+                                        <div style="margin-bottom: 15px;">
+                                            <div style="font-weight: 600; margin-bottom: 5px;">Can I change plans later?</div>
+                                            <div style="font-size: 0.9rem; color: var(--mid);">Yes, you can upgrade or downgrade your plan at any time.</div>
+                                        </div>
+                                        
+                                        <div style="margin-bottom: 15px;">
+                                            <div style="font-weight: 600; margin-bottom: 5px;">Is there a free trial?</div>
+                                            <div style="font-size: 0.9rem; color: var(--mid);">We offer a 7-day free trial for the Professional plan.</div>
+                                        </div>
+                                        
+                                        <div style="margin-bottom: 15px;">
+                                            <div style="font-weight: 600; margin-bottom: 5px;">How do I cancel?</div>
+                                            <div style="font-size: 0.9rem; color: var(--mid);">You can cancel anytime in your account settings.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p>Detailed subscription plans with comparison and FAQs</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Community Forum Section -->
+    <div class="section" id="community-section">
+        <h2>Community Forum</h2>
+        <p>Secure, moderated space for parents and professionals to share experiences and advice.</p>
+        
+        <div class="view-toggle">
+            <button class="view-toggle-btn active" onclick="toggleView('community', 'mobile')">Mobile View</button>
+            <button class="view-toggle-btn" onclick="toggleView('community', 'web')">Web View</button>
+        </div>
+        
+        <div class="design-container">
+            <!-- Mobile View -->
+           
+            
+            <!-- Web View -->
+            <div class="device web hidden" id="community-web">
+                <h3>Web Community</h3>
+                <div class="screen">
+                    <div class="interface">
+                        <div class="web-layout">
+                            <div class="sidebar">
+                                <div class="logo" style="margin-bottom: 30px;">
+                                    <div class="logo-icon">N</div>
+                                    <div style="font-size: 1.2rem; font-weight: 600;">NeuroLight</div>
+                                </div>
+                                
+                                <div style="margin-bottom: 20px;">
+                                    <div class="menu-item">
+                                        <div class="menu-icon"></div>
+                                        <div>Dashboard</div>
+                                    </div>
+                                    <div class="menu-item">
+                                        <div class="menu-icon"></div>
+                                        <div>Resource Library</div>
+                                    </div>
+                                    <div class="menu-item">
+                                        <div class="menu-icon"></div>
+                                        <div>AI Generator</div>
+                                    </div>
+                                    <div class="menu-item active">
+                                        <div class="menu-icon"></div>
+                                        <div>Community</div>
+                                    </div>
+                                </div>
+                                
+                                <div style="margin-top: 30px;">
+                                    <div style="font-size: 0.9rem; font-weight: 600; margin-bottom: 10px;">MY GROUPS</div>
+                                    <div class="menu-item">
+                                        <div class="menu-icon">👥</div>
+                                        <div>Anxiety Support</div>
+                                    </div>
+                                    <div class="menu-item">
+                                        <div class="menu-icon">🗣️</div>
+                                        <div>Speech Therapists</div>
+                                    </div>
+                                    <div class="menu-item">
+                                        <div class="menu-icon">👪</div>
+                                        <div>Parenting ASD</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="content">
+                                <div class="toolbar" style="justify-content: space-between;">
+                                    <div style="font-weight: 600; font-size: 1.2rem;">Community</div>
+                                    <div class="button" style="padding: 8px 15px; font-size: 0.9rem;">+ New Post</div>
+                                </div>
+                                
+                                <div style="padding: 20px;">
+                                    <div style="display: grid; grid-template-columns: 1fr 300px; gap: 20px;">
+                                        <div>
+                                            <div style="display: flex; gap: 15px; margin-bottom: 20px;">
+                                                <div style="background: rgba(106, 90, 205, 0.1); border-radius: 20px; padding: 8px 15px; font-size: 0.9rem;">All Discussions</div>
+                                                <div style="background: white; border-radius: 20px; padding: 8px 15px; font-size: 0.9rem; border: 1px solid #eee;">Popular</div>
+                                                <div style="background: white; border-radius: 20px; padding: 8px 15px; font-size: 0.9rem; border: 1px solid #eee;">Recent</div>
+                                            </div>
+                                            
+                                            <div class="community-group">
+                                                <div class="group-header">
+                                                    <div class="group-avatar">AS</div>
+                                                    <div style="flex: 1;">
+                                                        <div style="font-weight: 600;">Anxiety Support Group <span class="verification-badge">Verified</span></div>
+                                                        <div style="font-size: 0.8rem; color: var(--mid);">1.2k members • 5 new posts today</div>
+                                                    </div>
+                                                </div>
+                                                <div style="font-size: 0.9rem; margin-bottom: 10px;">Discussion and support for managing anxiety in children with special needs.</div>
+                                                <div style="display: flex; gap: 15px; font-size: 0.8rem; color: var(--mid);">
+                                                    <div>👋 12 online</div>
+                                                    <div>💬 45 new discussions</div>
+                                                    <div>📅 Last active 2 hours ago</div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="community-group">
+                                                <div class="group-header">
+                                                    <div class="group-avatar">SL</div>
+                                                    <div style="flex: 1;">
+                                                        <div style="font-weight: 600;">Speech Therapists UK <span class="verification-badge">Verified</span></div>
+                                                        <div style="font-size: 0.8rem; color: var(--mid);">850 members • Professional only</div>
+                                                    </div>
+                                                </div>
+                                                <div style="font-size: 0.9rem; margin-bottom: 10px;">Professional network for sharing therapy techniques and resources.</div>
+                                                <div style="display: flex; gap: 15px; font-size: 0.8rem; color: var(--mid);">
+                                                    <div>👋 8 online</div>
+                                                    <div>💬 22 new discussions</div>
+                                                    <div>📅 Last active 1 hour ago</div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="community-group">
+                                                <div class="group-header">
+                                                    <div class="group-avatar">P</div>
+                                                    <div style="flex: 1;">
+                                                        <div style="font-weight: 600;">Parenting Tips & Tricks</div>
+                                                        <div style="font-size: 0.8rem; color: var(--mid);">2.5k members • 15 new posts today</div>
+                                                    </div>
+                                                </div>
+                                                <div style="font-size: 0.9rem; margin-bottom: 10px;">Share your experiences and learn from other parents facing similar challenges.</div>
+                                                <div style="display: flex; gap: 15px; font-size: 0.8rem; color: var(--mid);">
+                                                    <div>👋 32 online</div>
+                                                    <div>💬 87 new discussions</div>
+                                                    <div>📅 Last active 30 mins ago</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div>
+                                            <div style="background: white; border-radius: var(--border-radius); padding: 15px; box-shadow: var(--shadow); margin-bottom: 20px;">
+                                                <div style="font-weight: 600; margin-bottom: 10px;">Suggested Groups</div>
+                                                
+                                                <div style="margin-bottom: 15px;">
+                                                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 5px;">
+                                                        <div class="group-avatar" style="width: 30px; height: 30px; font-size: 0.8rem;">AD</div>
+                                                        <div style="font-weight: 600; font-size: 0.9rem;">ADHD Parents Support</div>
+                                                    </div>
+                                                    <div style="font-size: 0.8rem; color: var(--mid);">1.5k members • 8 new posts</div>
+                                                </div>
+                                                
+                                                <div style="margin-bottom: 15px;">
+                                                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 5px;">
+                                                        <div class="group-avatar" style="width: 30px; height: 30px; font-size: 0.8rem;">OT</div>
+                                                        <div style="font-weight: 600; font-size: 0.9rem;">Occupational Therapists</div>
+                                                    </div>
+                                                    <div style="font-size: 0.8rem; color: var(--mid);">720 members • Professional</div>
+                                                </div>
+                                                
+                                                <div style="margin-bottom: 15px;">
+                                                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 5px;">
+                                                        <div class="group-avatar" style="width: 30px; height: 30px; font-size: 0.8rem;">SS</div>
+                                                        <div style="font-weight: 600; font-size: 0.9rem;">Success Stories</div>
+                                                    </div>
+                                                    <div style="font-size: 0.8rem; color: var(--mid);">Inspiration from our community</div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div style="background: white; border-radius: var(--border-radius); padding: 15px; box-shadow: var(--shadow);">
+                                                <div style="font-weight: 600; margin-bottom: 10px;">Community Guidelines</div>
+                                                <div style="font-size: 0.8rem; color: var(--mid); margin-bottom: 10px;">
+                                                    Our community is a safe space for sharing and support. Please be kind and respectful to all members.
+                                                </div>
+                                                <div style="color: var(--primary); font-size: 0.8rem; font-weight: 600;">Read full guidelines</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p>Community forum with detailed group listings and sidebar navigation</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function toggleView(section, view) {
+            // Hide all views for this section
+            document.querySelectorAll(`#${section}-mobile, #${section}-web`).forEach(el => {
+                el.classList.add('hidden');
+            });
+            
+            // Show the selected view
+            document.getElementById(`${section}-${view}`).classList.remove('hidden');
+            
+            // Update active button state
+            document.querySelectorAll(`#${section}-section .view-toggle-btn`).forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+        }
+    </script>
 </body>
 </html>
