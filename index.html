@@ -3,8 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=0.5">
     <title>NeuroLight App Design</title>
+  
     <style>
+         #e-a-web {
+            width: 100%;
+            max-width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .device.web {
+            width: 100%;
+        }
+
+        .device.web .screen {
+            width: 100%;
+            height: auto;
+        }
+
+        .web-layout {
+            display: flex;
+            width: 100%;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            width: 250px;
+            background: #f7f7f7;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.05);
+            flex-shrink: 0;
+        }
+
+        .content {
+            flex: 1;
+            padding: 20px;
+            background: #fafafa;
+        }
+        .web-layout {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+}
+.sidebar {
+    width: 250px; /* or adjust as needed */
+    background: #f7f7f7;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.05);
+    flex-shrink: 0;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+    background: #fafafa;
+}
+        .hidden {
+            display: none !important;
+        }
+
+        .view-toggle-btn.active {
+            background: rgba(106, 90, 205, 0.1);
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
         :root {
             --primary: #6A5ACD; /* Purple */
             --secondary: #4169E1; /* Royal Blue */
@@ -18,6 +82,15 @@
             --border-radius: 12px;
             --shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
+        body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    color: var(--dark);
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 20px;
+    font-size: 100%; /* Add this line */
+}
         
         body {
             font-family: 'Open Sans', sans-serif;
@@ -33,11 +106,11 @@
         }
         
         h1 {
-            color: var(--primary);
-            text-align: center;
-            font-size: 2.2rem;
-            margin-bottom: 1.5rem;
-        }
+    color: var(--primary);
+    text-align: center;
+    font-size: 2.2rem; /* Keep as rem */
+    margin-bottom: 1.5rem;
+}
         
         h2 {
             color: var(--secondary);
@@ -67,7 +140,9 @@
             gap: 30px;
             justify-content: center;
             margin-bottom: 40px;
+           
         }
+        
         
         .device {
             background: white;
@@ -546,13 +621,40 @@
             font-size: 0.8rem;
             color: var(--mid);
         }
+        @media screen and (max-width: 480px) {
+    .device.mobile {
+        width: 100%;
+        padding: 10px;
+    }
+    
+    .mobile .screen {
+        width: 100%;
+        height: auto;
+        min-height: 600px;
+    }
+    
+    .web-layout {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        width: 100%;
+        height: auto;
+    }
+}
     </style>
 </head>
 <body>
     <h1>NeuroLight App Design</h1>
-    
+
+    <img src="./logo.png" alt="NeuroLight" style="height: auto; width:20%; display: block; margin: 0 auto;">
+</br>
     <div class="section">
         <h2>Design System & Color Palette</h2>
+
+      
+    </div>
+
         
         
         <div class="color-palette">
@@ -586,12 +688,17 @@
        
     </div>
     
-    <div class="section">
+    <div class="section" id="d-v-section">
         <h2>1. Dashboard View</h2>
         <p>The dashboard serves as the central hub for parents and carers to access profiles of individuals under their care.</p>
-        
+        <div class="view-toggle">
+            <button class="view-toggle-btn active" onclick="toggleView('d-v', 'mobile')">Mobile View</button>
+            <button class="view-toggle-btn" onclick="toggleView('d-v', 'web')">Web View</button>
+        </div>
+
+
         <div class="design-container">
-            <div class="device mobile">
+            <div class="device mobile" id="d-v-mobile">
                 <h3>Mobile Dashboard</h3>
                 <div class="screen">
                     <div class="interface">
@@ -690,7 +797,7 @@
                 <p>Bottom navigation tabs for easy access to main sections</p>
             </div>
             
-            <div class="device web">
+            <div class="device web" id="d-v-web">
                 <h3>Web Dashboard</h3>
                 <div class="screen">
                     <div class="interface">
@@ -861,12 +968,16 @@
         </div>
     </div>
     
-    <div class="section">
+    <div class="section" id="p-v-section">
         <h2>2. Profile View</h2>
         <p>A comprehensive multi-tab layout for viewing and editing information about the person with additional needs.</p>
-        
+        <div class="view-toggle">
+            <button class="view-toggle-btn active" onclick="toggleView('p-v', 'mobile')">Mobile View</button>
+            <button class="view-toggle-btn" onclick="toggleView('p-v', 'web')">Web View</button>
+        </div>
+
         <div class="design-container">
-            <div class="device mobile">
+            <div class="device mobile" id="p-v-mobile">
                 <h3>Mobile Profile View</h3>
                 <div class="screen">
                     <div class="interface">
@@ -965,7 +1076,7 @@
                 <p>Scrollable tabs for different profile sections</p>
             </div>
             
-            <div class="device web">
+            <div class="device web" id="p-v-web">
                 <h3>Web Profile View</h3>
                 <div class="screen">
                     <div class="interface">
@@ -1138,12 +1249,15 @@
         </div>
     </div>
     
-    <div class="section">
+    <div class="section" id="m-i-section">
         <h2>3. Medical Information View</h2>
         <p>Detailed medical information section with diagnoses, medications, and health needs.</p>
-        
+        <div class="view-toggle">
+            <button class="view-toggle-btn active" onclick="toggleView('m-i', 'mobile')">Mobile View</button>
+            <button class="view-toggle-btn" onclick="toggleView('m-i', 'web')">Web View</button>
+        </div>
         <div class="design-container">
-            <div class="device mobile">
+            <div class="device mobile" id="m-i-mobile">
                 <h3>Mobile Medical View</h3>
                 <div class="screen">
                     <div class="interface">
@@ -1225,7 +1339,7 @@
                 <p>Tabbed medical information with visual indicators</p>
             </div>
             
-            <div class="device web">
+            <div class="device web" id="m-i-web">
                 <h3>Web Medical View</h3>
                 <div class="screen">
                     <div class="interface">
@@ -1463,12 +1577,16 @@
         </div>
     </div>
     
-    <div class="section">
+    <div class="section" id="e-a-section">
         <h2>4. Education & Activities View</h2>
         <p>Section for managing educational information, activities, and personal development.</p>
+        <div class="view-toggle">
+            <button class="view-toggle-btn active" onclick="toggleView('e-a', 'mobile')">Mobile View</button>
+            <button class="view-toggle-btn" onclick="toggleView('e-a', 'web')">Web View</button>
+        </div>
         
         <div class="design-container">
-            <div class="device mobile">
+            <div class="device mobile" id="e-a-mobile">
                 <h3>Mobile Education View</h3>
                 <div class="screen">
                     <div class="interface">
@@ -1562,7 +1680,7 @@
                 <p>Education-focused view with tag-based activity display</p>
             </div>
             
-            <div class="device web">
+            <div class="device web" id="e-a-web">
                 <h3>Web Education View</h3>
                 <div class="screen">
                     <div class="interface">
@@ -1778,12 +1896,62 @@
         </div>
     </div>
     
-    <div class="section">
+    <div class="section" id="ca-i-section">
         <h2>5. Community & AI Features</h2>
         <p>Community forum and AI assistant features to support parents and carers.</p>
         
+        <div class="view-toggle">
+            <button class="view-toggle-btn active" onclick="toggleView('ca-i', 'mobile')">Mobile View</button>
+            <button class="view-toggle-btn" onclick="toggleView('ca-i', 'web')">Web View</button>
+        </div>
+         
         <div class="design-container">
             <div class="device mobile">
+                <h3>Mobile AI Assistant</h3>
+                <div class="screen">
+                    <div class="interface">
+                        <div class="header">
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <div style="font-size: 1.2rem;">←</div>
+                                <div>NeuroLight Assistant</div>
+                            </div>
+                            <div>⋮</div>
+                        </div>
+                        
+                        <div class="chatbot" style="height: calc(100% - 60px);">
+                            <div class="chat-messages">
+                                <div class="message bot">
+                                    <div style="font-weight: 600; margin-bottom: 5px;">NeuroLight Assistant</div>
+                                    <div>Hello! I'm here to help you find resources and suggestions for supporting your loved one. What would you like to know about today?</div>
+                                </div>
+                                
+                                <div class="message user">
+                                    <div style="font-weight: 600; margin-bottom: 5px;">You</div>
+                                    <div>My son is having meltdowns during transitions at school</div>
+                                </div>
+                                
+                                <div class="message bot">
+                                    <div style="font-weight: 600; margin-bottom: 5px;">NeuroLight Assistant</div>
+                                    <div>Transition difficulties are common. Here are some strategies that might help:</div>
+                                    <div style="margin-top: 10px;">
+                                        <div>1. Use visual timetables to prepare for changes</div>
+                                        <div>2. Implement transition warnings (5-minute, 2-minute alerts)</div>
+                                        <div>3. Incorporate preferred activities after difficult transitions</div>
+                                    </div>
+                                    <div style="margin-top: 10px;">Would you like me to generate a custom transition plan based on Sam's profile?</div>
+                                </div>
+                            </div>
+                            
+                            <div class="chat-input">
+                                <div class="input-field">Type your message...</div>
+                                <div class="button accent" style="border-radius: 50%; width: 40px; height: 40px; padding: 0; display: flex; align-items: center; justify-content: center;">→</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p>AI chatbot interface with conversation history and quick action buttons</p>
+            </div>
+            <div class="device mobile" id="ca-i-mobile">
                 <h3>Mobile Community View</h3>
                 <div class="screen">
                     <div class="interface">
@@ -1892,63 +2060,108 @@
                 </div>
                 <p>Community forum with categorized posts and engagement metrics</p>
             </div>
-            
-            <div class="device mobile">
-                <h3>Mobile AI Assistant</h3>
+            <!-- Web View -->
+
+            <div class="device web" id="ca-i-web">
+                <h3>Web Community View</h3>
                 <div class="screen">
-                    <div class="interface">
-                        <div class="header">
-                            <div style="display: flex; align-items: center; gap: 10px;">
-                                <div style="font-size: 1.2rem;">←</div>
-                                <div>NeuroLight Assistant</div>
+                    <div class="interface" style="display: flex; height: 100%;">
+                        <!-- Sidebar Navigation -->
+                        <div style="width: 220px; background: #fff; border-right: 1px solid #eee; padding: 30px 15px;">
+                            <div style="margin-bottom: 30px; font-weight: bold; font-size: 1.2rem;">Navigation</div>
+                            <div style="display: flex; flex-direction: column; gap: 20px; font-size: 1rem; color: #555;">
+                                <div style="display: flex; align-items: center; gap: 10px;">
+                                    <div style="width: 20px; height: 20px; background: #eee; border-radius: 50%;"></div>
+                                    Home
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 10px;">
+                                    <div style="width: 20px; height: 20px; background: #eee; border-radius: 50%;"></div>
+                                    Profiles
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 10px; color: #6a5acd;">
+                                    <div style="width: 20px; height: 20px; background: #6a5acd; border-radius: 50%;"></div>
+                                    Community
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 10px;">
+                                    <div style="width: 20px; height: 20px; background: #eee; border-radius: 50%;"></div>
+                                    Chat
+                                </div>
                             </div>
-                            <div>⋮</div>
                         </div>
-                        
-                        <div class="chatbot" style="height: calc(100% - 60px);">
-                            <div class="chat-messages">
-                                <div class="message bot">
-                                    <div style="font-weight: 600; margin-bottom: 5px;">NeuroLight Assistant</div>
-                                    <div>Hello! I'm here to help you find resources and suggestions for supporting your loved one. What would you like to know about today?</div>
-                                </div>
-                                
-                                <div class="message user">
-                                    <div style="font-weight: 600; margin-bottom: 5px;">You</div>
-                                    <div>My son is having meltdowns during transitions at school</div>
-                                </div>
-                                
-                                <div class="message bot">
-                                    <div style="font-weight: 600; margin-bottom: 5px;">NeuroLight Assistant</div>
-                                    <div>Transition difficulties are common. Here are some strategies that might help:</div>
-                                    <div style="margin-top: 10px;">
-                                        <div>1. Use visual timetables to prepare for changes</div>
-                                        <div>2. Implement transition warnings (5-minute, 2-minute alerts)</div>
-                                        <div>3. Incorporate preferred activities after difficult transitions</div>
+            
+                        <!-- Main Community Area -->
+                        <div style="flex: 1; overflow-y: auto;">
+                            <div class="main-content" style="max-width: 800px; margin: 0 auto; padding: 30px;">
+                                <!-- Header -->
+                                <div class="header" style="padding-bottom: 20px; display: flex; justify-content: space-between; align-items: center;">
+                                    <div style="display: flex; align-items: center; gap: 15px; font-size: 1.4rem;">
+                                        <div>←</div>
+                                        <div>Community</div>
                                     </div>
-                                    <div style="margin-top: 10px;">Would you like me to generate a custom transition plan based on Sam's profile?</div>
+                                    <div style="font-size: 1.6rem;">⋮</div>
                                 </div>
-                            </div>
-                            
-                            <div class="chat-input">
-                                <div class="input-field">Type your message...</div>
-                                <div class="button accent" style="border-radius: 50%; width: 40px; height: 40px; padding: 0; display: flex; align-items: center; justify-content: center;">→</div>
+            
+                                <!-- Navigation Tabs -->
+                                <div class="nav-tabs" style="display: flex; gap: 15px; padding-bottom: 20px; border-bottom: 1px solid #eee;">
+                                    <div class="nav-tab active" style="padding: 10px 20px; border-radius: 8px; background: rgba(106, 90, 205, 0.1);">Parents</div>
+                                    <div class="nav-tab" style="padding: 10px 20px; border-radius: 8px;">Carers</div>
+                                    <div class="nav-tab" style="padding: 10px 20px; border-radius: 8px;">Young Adults</div>
+                                </div>
+            
+                                <!-- Search and Filters -->
+                                <div class="search" style="margin: 25px 0; padding: 15px; background: #f5f5f5; border-radius: 10px; display: flex; align-items: center; gap: 10px;">
+                                    🔍 Search community...
+                                </div>
+                                
+                                <div style="display: flex; gap: 15px; overflow-x: auto; margin-bottom: 30px;">
+                                    <div style="background: rgba(106, 90, 205, 0.1); padding: 10px 20px; border-radius: 20px; white-space: nowrap;">All Topics</div>
+                                    <div style="background: white; padding: 10px 20px; border-radius: 20px; border: 1px solid #eee;">Education</div>
+                                    <div style="background: white; padding: 10px 20px; border-radius: 20px; border: 1px solid #eee;">Therapies</div>
+                                    <div style="background: white; padding: 10px 20px; border-radius: 20px; border: 1px solid #eee;">Behavior</div>
+                                    <div style="background: white; padding: 10px 20px; border-radius: 20px; border: 1px solid #eee;">Daily Care</div>
+                                </div>
+            
+                                <!-- Posts -->
+                                <div class="community-posts" style="display: flex; flex-direction: column; gap: 25px;">
+                                    <!-- Post 1 -->
+                                    <div class="post" style="background: white; padding: 25px; border-radius: 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                                        <div class="post-header" style="display: flex; justify-content: space-between; margin-bottom: 15px;">
+                                            <div class="post-author" style="display: flex; align-items: center; gap: 15px;">
+                                                <div class="author-avatar" style="width: 40px; height: 40px; border-radius: 50%; background: #eee; display: flex; align-items: center; justify-content: center;">M</div>
+                                                <div>
+                                                    <div style="font-weight: 600; font-size: 1.1rem;">Maria K.</div>
+                                                    <div style="font-size: 0.9rem; color: #666;">Parent • 2h ago</div>
+                                                </div>
+                                            </div>
+                                            <div style="font-size: 1.4rem;">⋯</div>
+                                        </div>
+                                        <div style="margin-bottom: 15px; font-size: 1rem; line-height: 1.5;">
+                                            Looking for recommendations for sensory-friendly clothing for my 10yo with ASD. Any brands you've found that work well?
+                                        </div>
+                                        <div style="display: flex; gap: 25px; font-size: 0.9rem; color: #666;">
+                                            <div>💬 12 comments</div>
+                                            <div>👍 8 likes</div>
+                                        </div>
+                                    </div>
+            
+                                    <!-- Add more posts as needed using similar structure -->
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <p>AI chatbot interface with conversation history and quick action buttons</p>
+                <p>Desktop-optimized community forum with sidebar navigation</p>
             </div>
-            
-            
-        </div>
-    </div>
-    
-    <div class="section">
+        </div>      
+    <div class="section" id="m-k-section">
         <h2>6. Marketplace & Professional Access</h2>
         <p>Marketplace for finding professionals and secure access for approved practitioners.</p>
-        
+        <div class="view-toggle">
+            <button class="view-toggle-btn active" onclick="toggleView('m-k', 'mobile')">Mobile View</button>
+            <button class="view-toggle-btn" onclick="toggleView('m-k', 'web')">Web View</button>
+        </div>
         <div class="design-container">
-            <div class="device mobile">
+            <div class="device mobile" id="m-k-mobile">
                 <h3>Mobile Marketplace</h3>
                 <div class="screen">
                     <div class="interface">
@@ -2091,7 +2304,7 @@
                 <p>Secure access screen for professionals with code entry</p>
             </div>
             
-            <div class="device web">
+            <div class="device web" id="m-k-web">
                 <h3>Web Marketplace</h3>
                 <div class="screen">
                     <div class="interface">
@@ -2260,11 +2473,15 @@
         </div>
     </div>
     
-    <div class="section">
+    <div class="section" id="l-s-section">
         <h2>7. Login & Security</h2>
         <p>Secure login screens and GDPR compliance notice.</p>
+        <div class="view-toggle">
+            <button class="view-toggle-btn active" onclick="toggleView('l-s', 'mobile')">Mobile View</button>
+            <button class="view-toggle-btn" onclick="toggleView('l-s', 'web')">Web View</button>
+        </div>
         
-        <div class="design-container">
+        <div class="design-container" id="l-s-mobile">
             <div class="device mobile">
                 <h3>Mobile Login</h3>
                 <div class="screen">
@@ -2339,10 +2556,112 @@
                 </div>
                 <p>GDPR compliance notice with key privacy points</p>
             </div>
+
         </div>
+            <div class="design-container" id="l-s-web">
+                <div class="device web">
+                    <h3>Web Login</h3>
+                    <div class="screen">
+                        <div class="interface">
+                            <div class="login-screen" style="max-width: 400px; margin: 0 auto;">
+                                <div class="login-card" style="padding: 40px 30px;">
+                                    <div style="text-align: center; margin-bottom: 30px;">
+                                        <div class="logo" style="justify-content: center; margin-bottom: 20px;">
+                                            <div class="logo-icon" style="width: 50px; height: 50px; font-size: 1.5rem;">N</div>
+                                            <div style="font-size: 1.5rem; font-weight: 600;">NeuroLight</div>
+                                        </div>
+                                        <h2 style="margin: 0;">Welcome Back</h2>
+                                        <div style="color: var(--mid); font-size: 1rem; margin-top: 8px;">
+                                            Sign in to access your profiles
+                                        </div>
+                                    </div>
+            
+                                    <div class="form-row">
+                                        <div class="form-label">Email</div>
+                                        <div class="form-input" style="padding: 12px 15px; font-size: 1rem;">your@email.com</div>
+                                    </div>
+            
+                                    <div class="form-row" style="margin-top: 20px;">
+                                        <div class="form-label">Password</div>
+                                        <div class="form-input" style="padding: 12px 15px; font-size: 1rem;">••••••••</div>
+                                    </div>
+            
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin: 20px 0;">
+                                        <label style="font-size: 0.95rem;">
+                                            <input type="checkbox"> Remember me
+                                        </label>
+                                        <div style="color: var(--primary); font-size: 0.95rem; cursor: pointer;">
+                                            Forgot password?
+                                        </div>
+                                    </div>
+            
+                                    <div class="button" style="width: 100%; padding: 14px; font-size: 1.1rem;">Sign In</div>
+            
+                                    <div style="text-align: center; margin-top: 25px; color: var(--mid); font-size: 0.95rem;">
+                                        Don't have an account? 
+                                        <span style="color: var(--primary); cursor: pointer;">Create account</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p>Web-optimized login form with persistent options</p>
+                </div>
+            
+                <div class="device web">
+                    <h3>Privacy Dashboard</h3>
+                    <div class="screen">
+                        <div class="interface">
+                            <div style="padding: 30px; height: 100%;">
+                                <div style="max-width: 500px; margin: 0 auto;">
+                                    <div style="text-align: center; margin-bottom: 25px;">
+                                        <div style="width: 70px; height: 70px; border-radius: 50%; background: rgba(106, 90, 205, 0.1); 
+                                                 display: flex; align-items: center; justify-content: center; margin: 0 auto 15px;">
+                                            <div style="font-size: 1.8rem;">🔒</div>
+                                        </div>
+                                        <h2 style="margin: 0;">Privacy Center</h2>
+                                        <p style="font-size: 1rem; color: var(--mid); margin-top: 8px;">
+                                            Manage your data preferences
+                                        </p>
+                                    </div>
+            
+                                    <div style="background: white; border-radius: var(--border-radius); 
+                                             padding: 25px; box-shadow: var(--shadow);">
+                                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                                            <div class="privacy-card">
+                                                <h4>Data Permissions</h4>
+                                                <p style="font-size: 0.95rem;">Manage profile access controls</p>
+                                            </div>
+                                            <div class="privacy-card">
+                                                <h4>Security</h4>
+                                                <p style="font-size: 0.95rem;">Two-factor authentication settings</p>
+                                            </div>
+                                            <div class="privacy-card">
+                                                <h4>Export Data</h4>
+                                                <p style="font-size: 0.95rem;">Download your information</p>
+                                            </div>
+                                            <div class="privacy-card">
+                                                <h4>Delete Account</h4>
+                                                <p style="font-size: 0.95rem;">Permanently remove your data</p>
+                                            </div>
+                                        </div>
+            
+                                        <div style="margin-top: 25px; font-size: 0.9rem; color: var(--mid);">
+                                            Last updated: January 15, 2024 · 
+                                            <span style="color: var(--primary); cursor: pointer;">View Full Policy</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p>Expanded privacy controls dashboard for web</p>
+                </div>
+            </div>
+        
     </div>
 
-    <h1>NeuroLight Additional Features</h1>
+
     
     <!-- Resource Library Section -->
     <div class="section" id="resource-library-section">
@@ -2440,7 +2759,7 @@
             </div>
             
             <!-- Web View -->
-            <div class="device web hidden" id="resource-library-web">
+            <div class="device web " id="resource-library-web">
                 <h3>Web Resource Library</h3>
                 <div class="screen">
                     <div class="interface">
@@ -3112,179 +3431,7 @@
         </div>
     </div>
     
-    <!-- Community Forum Section -->
-    <div class="section" id="community-section">
-        <h2>Community Forum</h2>
-        <p>Secure, moderated space for parents and professionals to share experiences and advice.</p>
-        
-        <div class="view-toggle">
-            <button class="view-toggle-btn active" onclick="toggleView('community', 'mobile')">Mobile View</button>
-            <button class="view-toggle-btn" onclick="toggleView('community', 'web')">Web View</button>
-        </div>
-        
-        <div class="design-container">
-            <!-- Mobile View -->
-           
-            
-            <!-- Web View -->
-            <div class="device web hidden" id="community-web">
-                <h3>Web Community</h3>
-                <div class="screen">
-                    <div class="interface">
-                        <div class="web-layout">
-                            <div class="sidebar">
-                                <div class="logo" style="margin-bottom: 30px;">
-                                    <div class="logo-icon">N</div>
-                                    <div style="font-size: 1.2rem; font-weight: 600;">NeuroLight</div>
-                                </div>
-                                
-                                <div style="margin-bottom: 20px;">
-                                    <div class="menu-item">
-                                        <div class="menu-icon"></div>
-                                        <div>Dashboard</div>
-                                    </div>
-                                    <div class="menu-item">
-                                        <div class="menu-icon"></div>
-                                        <div>Resource Library</div>
-                                    </div>
-                                    <div class="menu-item">
-                                        <div class="menu-icon"></div>
-                                        <div>AI Generator</div>
-                                    </div>
-                                    <div class="menu-item active">
-                                        <div class="menu-icon"></div>
-                                        <div>Community</div>
-                                    </div>
-                                </div>
-                                
-                                <div style="margin-top: 30px;">
-                                    <div style="font-size: 0.9rem; font-weight: 600; margin-bottom: 10px;">MY GROUPS</div>
-                                    <div class="menu-item">
-                                        <div class="menu-icon">👥</div>
-                                        <div>Anxiety Support</div>
-                                    </div>
-                                    <div class="menu-item">
-                                        <div class="menu-icon">🗣️</div>
-                                        <div>Speech Therapists</div>
-                                    </div>
-                                    <div class="menu-item">
-                                        <div class="menu-icon">👪</div>
-                                        <div>Parenting ASD</div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="content">
-                                <div class="toolbar" style="justify-content: space-between;">
-                                    <div style="font-weight: 600; font-size: 1.2rem;">Community</div>
-                                    <div class="button" style="padding: 8px 15px; font-size: 0.9rem;">+ New Post</div>
-                                </div>
-                                
-                                <div style="padding: 20px;">
-                                    <div style="display: grid; grid-template-columns: 1fr 300px; gap: 20px;">
-                                        <div>
-                                            <div style="display: flex; gap: 15px; margin-bottom: 20px;">
-                                                <div style="background: rgba(106, 90, 205, 0.1); border-radius: 20px; padding: 8px 15px; font-size: 0.9rem;">All Discussions</div>
-                                                <div style="background: white; border-radius: 20px; padding: 8px 15px; font-size: 0.9rem; border: 1px solid #eee;">Popular</div>
-                                                <div style="background: white; border-radius: 20px; padding: 8px 15px; font-size: 0.9rem; border: 1px solid #eee;">Recent</div>
-                                            </div>
-                                            
-                                            <div class="community-group">
-                                                <div class="group-header">
-                                                    <div class="group-avatar">AS</div>
-                                                    <div style="flex: 1;">
-                                                        <div style="font-weight: 600;">Anxiety Support Group <span class="verification-badge">Verified</span></div>
-                                                        <div style="font-size: 0.8rem; color: var(--mid);">1.2k members • 5 new posts today</div>
-                                                    </div>
-                                                </div>
-                                                <div style="font-size: 0.9rem; margin-bottom: 10px;">Discussion and support for managing anxiety in children with special needs.</div>
-                                                <div style="display: flex; gap: 15px; font-size: 0.8rem; color: var(--mid);">
-                                                    <div>👋 12 online</div>
-                                                    <div>💬 45 new discussions</div>
-                                                    <div>📅 Last active 2 hours ago</div>
-                                                </div>
-                                            </div>
-                                            
-                                            <div class="community-group">
-                                                <div class="group-header">
-                                                    <div class="group-avatar">SL</div>
-                                                    <div style="flex: 1;">
-                                                        <div style="font-weight: 600;">Speech Therapists UK <span class="verification-badge">Verified</span></div>
-                                                        <div style="font-size: 0.8rem; color: var(--mid);">850 members • Professional only</div>
-                                                    </div>
-                                                </div>
-                                                <div style="font-size: 0.9rem; margin-bottom: 10px;">Professional network for sharing therapy techniques and resources.</div>
-                                                <div style="display: flex; gap: 15px; font-size: 0.8rem; color: var(--mid);">
-                                                    <div>👋 8 online</div>
-                                                    <div>💬 22 new discussions</div>
-                                                    <div>📅 Last active 1 hour ago</div>
-                                                </div>
-                                            </div>
-                                            
-                                            <div class="community-group">
-                                                <div class="group-header">
-                                                    <div class="group-avatar">P</div>
-                                                    <div style="flex: 1;">
-                                                        <div style="font-weight: 600;">Parenting Tips & Tricks</div>
-                                                        <div style="font-size: 0.8rem; color: var(--mid);">2.5k members • 15 new posts today</div>
-                                                    </div>
-                                                </div>
-                                                <div style="font-size: 0.9rem; margin-bottom: 10px;">Share your experiences and learn from other parents facing similar challenges.</div>
-                                                <div style="display: flex; gap: 15px; font-size: 0.8rem; color: var(--mid);">
-                                                    <div>👋 32 online</div>
-                                                    <div>💬 87 new discussions</div>
-                                                    <div>📅 Last active 30 mins ago</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-                                        <div>
-                                            <div style="background: white; border-radius: var(--border-radius); padding: 15px; box-shadow: var(--shadow); margin-bottom: 20px;">
-                                                <div style="font-weight: 600; margin-bottom: 10px;">Suggested Groups</div>
-                                                
-                                                <div style="margin-bottom: 15px;">
-                                                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 5px;">
-                                                        <div class="group-avatar" style="width: 30px; height: 30px; font-size: 0.8rem;">AD</div>
-                                                        <div style="font-weight: 600; font-size: 0.9rem;">ADHD Parents Support</div>
-                                                    </div>
-                                                    <div style="font-size: 0.8rem; color: var(--mid);">1.5k members • 8 new posts</div>
-                                                </div>
-                                                
-                                                <div style="margin-bottom: 15px;">
-                                                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 5px;">
-                                                        <div class="group-avatar" style="width: 30px; height: 30px; font-size: 0.8rem;">OT</div>
-                                                        <div style="font-weight: 600; font-size: 0.9rem;">Occupational Therapists</div>
-                                                    </div>
-                                                    <div style="font-size: 0.8rem; color: var(--mid);">720 members • Professional</div>
-                                                </div>
-                                                
-                                                <div style="margin-bottom: 15px;">
-                                                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 5px;">
-                                                        <div class="group-avatar" style="width: 30px; height: 30px; font-size: 0.8rem;">SS</div>
-                                                        <div style="font-weight: 600; font-size: 0.9rem;">Success Stories</div>
-                                                    </div>
-                                                    <div style="font-size: 0.8rem; color: var(--mid);">Inspiration from our community</div>
-                                                </div>
-                                            </div>
-                                            
-                                            <div style="background: white; border-radius: var(--border-radius); padding: 15px; box-shadow: var(--shadow);">
-                                                <div style="font-weight: 600; margin-bottom: 10px;">Community Guidelines</div>
-                                                <div style="font-size: 0.8rem; color: var(--mid); margin-bottom: 10px;">
-                                                    Our community is a safe space for sharing and support. Please be kind and respectful to all members.
-                                                </div>
-                                                <div style="color: var(--primary); font-size: 0.8rem; font-weight: 600;">Read full guidelines</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <p>Community forum with detailed group listings and sidebar navigation</p>
-            </div>
-        </div>
-    </div>
+
     
     <script>
         function toggleView(section, view) {
@@ -3301,6 +3448,54 @@
                 btn.classList.remove('active');
             });
             event.target.classList.add('active');
+        }
+    </script>
+    <div class="accessibility-controls">
+        <button onclick="adjustFontSize(0.9)" aria-label="Decrease text size">A-</button>
+        <button onclick="adjustFontSize(1.1)" aria-label="Increase text size">A+</button>
+        <button onclick="resetFontSize()" aria-label="Reset text size">A↺</button>
+    </div>
+    
+    <style>
+        .accessibility-controls {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            z-index: 1000;
+            display: flex;
+            gap: 5px;
+            padding: 8px;
+        }
+        
+        .accessibility-controls button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+    
+    <script>
+        let currentFontSize = 1;
+        
+        function adjustFontSize(modifier) {
+            currentFontSize *= modifier;
+            document.documentElement.style.fontSize = `${currentFontSize}rem`;
+        }
+        
+        function resetFontSize() {
+            currentFontSize = 1;
+            document.documentElement.style.fontSize = '1rem';
         }
     </script>
 </body>
