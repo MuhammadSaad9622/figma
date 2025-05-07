@@ -22,7 +22,51 @@
             width: 100%;
             height: auto;
         }
+        .nav-tabs-slider {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 20px;
+  }
 
+  .slider-arrow {
+    cursor: pointer;
+    font-size: 1.5rem;
+    user-select: none;
+    padding: 5px 10px;
+    background: #eee;
+    border-radius: 5px;
+  }
+
+  .nav-tabs-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 10px;
+    flex: 1;
+    scrollbar-width: none;
+  }
+
+  .nav-tabs-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-tab {
+    white-space: nowrap;
+    padding: 10px 15px;
+    background: #f0f0f0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+  }
+
+  .nav-tab.active {
+    background: #5c3dff;
+    color: white;
+  }
         .web-layout {
             display: flex;
             width: 100%;
@@ -687,6 +731,7 @@
         
        
     </div>
+
     
     <div class="section" id="d-v-section">
         <h2>1. Dashboard View</h2>
@@ -968,6 +1013,7 @@
         </div>
     </div>
     
+    
     <div class="section" id="p-v-section">
         <h2>2. Profile View</h2>
         <p>A comprehensive multi-tab layout for viewing and editing information about the person with additional needs.</p>
@@ -1075,179 +1121,109 @@
                 </div>
                 <p>Scrollable tabs for different profile sections</p>
             </div>
-            
-            <div class="device web" id="p-v-web">
-                <h3>Web Profile View</h3>
-                <div class="screen">
-                    <div class="interface">
-                        <div class="web-layout">
-                            <div class="sidebar">
-                                <div class="logo" style="margin-bottom: 30px;">
-                                    <div class="logo-icon">N</div>
-                                    <div style="font-size: 1.2rem; font-weight: 600;">NeuroLight</div>
-                                </div>
-                                
-                                <div style="margin-bottom: 20px;">
-                                    <div class="menu-item">
-                                        <div class="menu-icon"></div>
-                                        <div>Dashboard</div>
-                                    </div>
-                                    <div class="menu-item active">
-                                        <div class="menu-icon"></div>
-                                        <div>Profiles</div>
-                                    </div>
-                                    <div class="menu-item">
-                                        <div class="menu-icon"></div>
-                                        <div>Medical Info</div>
-                                    </div>
-                                    <div class="menu-item">
-                                        <div class="menu-icon"></div>
-                                        <div>Support Plans</div>
-                                    </div>
-                                    <div class="menu-item">
-                                        <div class="menu-icon"></div>
-                                        <div>Community</div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="content">
-                                <div class="toolbar" style="justify-content: space-between;">
-                                    <div style="display: flex; align-items: center; gap: 10px;">
-                                        <div style="font-size: 1.2rem;">←</div>
-                                        <div style="font-weight: 600;">Back to Profiles</div>
-                                    </div>
-                                    <div style="display: flex; align-items: center; gap: 15px;">
-                                        <div class="button secondary" style="padding: 8px 15px;">Share Profile</div>
-                                        <div>⋮</div>
-                                    </div>
-                                </div>
-                                
-                                <div style="padding: 20px;">
-                                    <div style="display: flex; align-items: center; margin-bottom: 20px;">
-                                        <div class="profile-avatar" style="width: 80px; height: 80px; margin-right: 20px; font-size: 2rem;">S</div>
-                                        <div>
-                                            <div style="font-weight: 600; font-size: 1.5rem;">Sam Wilson</div>
-                                            <div style="color: var(--mid);">14 years old · Oakwood Special School</div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="nav-tabs" style="margin-bottom: 20px; border-radius: var(--border-radius); overflow: hidden;">
-                                        <div class="nav-tab active">About Me</div>
-                                        <div class="nav-tab">Medical Information</div>
-                                        <div class="nav-tab">Education & Activities</div>
-                                        <div class="nav-tab">Behaviour Support</div>
-                                        <div class="nav-tab">Proactive Strategies</div>
-                                        <div class="nav-tab">More...</div>
-                                    </div>
-                                    
-                                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                                        <div class="form-section">
-                                            <div class="section-title">
-                                                <h3 style="margin: 0;">Personal Information</h3>
-                                                <div style="color: var(--primary);">Edit</div>
-                                            </div>
-                                            
-                                            <div class="form-row">
-                                                <div class="form-label">Full Name</div>
-                                                <div class="form-input">Sam Wilson</div>
-                                            </div>
-                                            
-                                            <div class="form-row">
-                                                <div class="form-label">Date of Birth</div>
-                                                <div class="form-input">October 15, 2010 (14 years old)</div>
-                                            </div>
-                                            
-                                            <div class="form-row">
-                                                <div class="form-label">NI Number</div>
-                                                <div class="form-input">AB 12 34 56 C</div>
-                                            </div>
-                                            
-                                            <div class="form-row">
-                                                <div class="form-label">Local Authority</div>
-                                                <div class="form-input">London Borough of Camden</div>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="form-section">
-                                            <div class="section-title">
-                                                <h3 style="margin: 0;">Contact Information</h3>
-                                                <div style="color: var(--primary);">Edit</div>
-                                            </div>
-                                            
-                                            <div class="form-row">
-                                                <div class="form-label">Address</div>
-                                                <div class="form-input">123 Main Street, London, UK</div>
-                                            </div>
-                                            
-                                            <div class="form-row">
-                                                <div class="form-label">Email</div>
-                                                <div class="form-input">parent@example.com</div>
-                                            </div>
-                                            
-                                            <div class="form-row">
-                                                <div class="form-label">Phone</div>
-                                                <div class="form-input">+44 123 456 7890</div>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="form-section">
-                                            <div class="section-title">
-                                                <h3 style="margin: 0;">Education</h3>
-                                                <div style="color: var(--primary);">Edit</div>
-                                            </div>
-                                            
-                                            <div class="form-row">
-                                                <div class="form-label">School/Day Centre</div>
-                                                <div class="form-input">Oakwood Special School</div>
-                                            </div>
-                                            
-                                            <div class="form-row">
-                                                <div class="form-label">Education Status</div>
-                                                <div class="form-input">Full-time education</div>
-                                            </div>
-                                            
-                                            <div class="form-row">
-                                                <div class="form-label">Education Coordinator</div>
-                                                <div class="form-input">Mrs. Johnson</div>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="form-section">
-                                            <div class="section-title">
-                                                <h3 style="margin: 0;">Support Network</h3>
-                                                <div style="color: var(--primary);">Edit</div>
-                                            </div>
-                                            
-                                            <div class="form-row">
-                                                <div class="form-label">Key Worker</div>
-                                                <div class="form-input">David Peterson</div>
-                                            </div>
-                                            
-                                            <div class="form-row">
-                                                <div class="form-label">Social Worker</div>
-                                                <div class="form-input">Emma Thompson</div>
-                                            </div>
-                                            
-                                            <div class="form-row">
-                                                <div class="form-label">Speech Therapist</div>
-                                                <div class="form-input">Sarah Williams</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div style="display: flex; justify-content: flex-end; margin-top: 20px;">
-                                        <div class="button" style="padding: 12px 30px;">Save Changes</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
+    
+    <div class="device web" id="p-v-web">
+        <h3 style="padding-left: 20px;">Web Profile View</h3>
+        <div class="screen">
+          <div class="interface">
+            <div class="web-layout">
+              <div class="sidebar">
+                <div class="logo" style="margin-bottom: 30px;">
+                  <div class="logo-icon">N</div>
+                  <div style="font-size: 1.2rem; font-weight: 600;">NeuroLight</div>
                 </div>
-                <p>Expanded profile view with side-by-side sections</p>
+    
+                <div style="margin-bottom: 20px;">
+                  <div class="menu-item"><div class="menu-icon"></div>Dashboard</div>
+    
+                  <div class="menu-item active" onclick="toggleDropdown()" style="display: flex; justify-content: space-between; align-items: center;">
+                    <span>Profiles</span>
+                    <span style="font-size: 1rem;">▼</span>
+                  </div>
+                  <div id="profileDropdown" style="display: none; margin-left: 10px;">
+                    <div class="menu-item" onclick="setTab('about')">About Me</div>
+                    <div class="menu-item" onclick="setTab('medical')">Medical Information</div>
+                    <div class="menu-item" onclick="setTab('education')">Education & Activities</div>
+                    <div class="menu-item" onclick="setTab('behaviour')">Behaviour Support</div>
+                    <div class="menu-item" onclick="setTab('proactive')">Proactive Strategies</div>
+                    <div class="menu-item" onclick="setTab('returning')">Returning to Green</div>
+                    <div class="menu-item" onclick="setTab('reactive')">Reactive Strategies</div>
+                    <div class="menu-item" onclick="setTab('behaviourInfo')">Behaviour Information</div>
+                    <div class="menu-item" onclick="setTab('debrief')">Reconnecting and Debrief</div>
+                    <div class="menu-item" onclick="setTab('restrictive')">Restrictive Practices</div>
+                    <div class="menu-item" onclick="setTab('circle')">Circle of Trust and Likes</div>
+                    <div class="menu-item" onclick="setTab('transitioning')">Moving and Transitioning With Me</div>
+                    <div class="menu-item" onclick="setTab('targets')">Targets and Adulthood Preparation</div>
+                    <div class="menu-item" onclick="setTab('mca')">Mental Capacity Act (MCA)</div>
+                    <div class="menu-item" onclick="setTab('ehcp')">Educational Health Care Plan (EHCP) Live Document</div>
+                  </div>
+    
+                  <div class="menu-item"><div class="menu-icon"></div>Medical Info</div>
+                  <div class="menu-item"><div class="menu-icon"></div>Support Plans</div>
+                  <div class="menu-item"><div class="menu-icon"></div>Community</div>
+                </div>
+              </div>
+    
+              <div class="content" style="flex: 1; padding: 20px;">
+                <div class="toolbar" style="display: flex; justify-content: space-between; align-items: center;">
+                  <div style="display: flex; align-items: center; gap: 10px;">
+                    <div style="font-size: 1.2rem;">←</div>
+                    <div style="font-weight: 600;">Back to Profiles</div>
+                  </div>
+                  <div style="display: flex; align-items: center; gap: 15px;">
+                    <div class="button secondary" style="padding: 8px 15px; background: #eee; border-radius: 5px;">Share Profile</div>
+                    <div>⋮</div>
+                  </div>
+                </div>
+    
+                <div style="margin-top: 20px;">
+                  <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                    <div class="profile-avatar" style="width: 80px; height: 80px; background: #3ef4df; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; margin-right: 20px;">S</div>
+                    <div>
+                      <div style="font-weight: 600; font-size: 1.5rem;">Sam Wilson</div>
+                      <div style="color: #777;">14 years old · Oakwood Special School</div>
+                    </div>
+                  </div>
+    
+                  <div class="nav-tabs-slider">
+                    <div class="slider-arrow left" onclick="scrollTabs(-1)">&#8249;</div>
+                    <div class="nav-tabs-container" id="navTabs">
+                      <button class="nav-tab" onclick="setTab('about')" id="tab-about">About Me</button>
+                      <button class="nav-tab" onclick="setTab('medical')" id="tab-medical">Medical Information</button>
+                      <button class="nav-tab" onclick="setTab('education')" id="tab-education">Education & Activities</button>
+                      <button class="nav-tab" onclick="setTab('behaviour')" id="tab-behaviour">Behaviour Support</button>
+                      <button class="nav-tab" onclick="setTab('proactive')" id="tab-proactive">Proactive Strategies</button>
+                      <button class="nav-tab" onclick="setTab('returning')" id="tab-returning">Returning to Green</button>
+                      <button class="nav-tab" onclick="setTab('reactive')" id="tab-reactive">Reactive Strategies</button>
+                      <button class="nav-tab" onclick="setTab('behaviourInfo')" id="tab-behaviourInfo">Behaviour Information</button>
+                      <button class="nav-tab" onclick="setTab('debrief')" id="tab-debrief">Reconnecting and Debrief</button>
+                      <button class="nav-tab" onclick="setTab('restrictive')" id="tab-restrictive">Restrictive Practices</button>
+                      <button class="nav-tab" onclick="setTab('circle')" id="tab-circle">Circle of Trust and Likes</button>
+                      <button class="nav-tab" onclick="setTab('transitioning')" id="tab-transitioning">Moving and Transitioning With Me</button>
+                      <button class="nav-tab" onclick="setTab('targets')" id="tab-targets">Targets and Adulthood Preparation</button>
+                      <button class="nav-tab" onclick="setTab('mca')" id="tab-mca">Mental Capacity Act (MCA)</button>
+                      <button class="nav-tab" onclick="setTab('ehcp')" id="tab-ehcp">EHCP Live Document</button>
+                    </div>
+                    <div class="slider-arrow right" onclick="scrollTabs(1)">&#8250;</div>
+                  </div>
+    
+                  <div id="tab-content"></div>
+    
+                  <div style="display: flex; justify-content: flex-end; margin-top: 20px;">
+                    <div class="button" style="padding: 12px 30px; background: #5c3dff; color: white; border-radius: 6px;">Save Changes</div>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
+        <p style="padding-left: 20px;">Expanded profile view with side-by-side sections</p>
+      </div>          
+            
     </div>
+</div>
+        
     
     <div class="section" id="m-i-section">
         <h2>3. Medical Information View</h2>
@@ -3497,6 +3473,762 @@
             currentFontSize = 1;
             document.documentElement.style.fontSize = '1rem';
         }
+
+       
+                const tabContent = document.getElementById("tab-content");
+            
+                function toggleDropdown() {
+                  const dropdown = document.getElementById("profileDropdown");
+                  dropdown.style.display = dropdown.style.display === "none" ? "block" : "none";
+                }
+            
+                function setTab(tab) {
+                  document.querySelectorAll('.nav-tab').forEach(btn => btn.classList.remove('active'));
+                  const activeBtn = document.getElementById(`tab-${tab}`);
+                  if (activeBtn) activeBtn.classList.add('active');
+            
+                  if (tab === 'medical') {
+                    tabContent.innerHTML = `
+                      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div class="form-section">
+                          <div class="section-title"><h3 style="color: #5C3DFF;">Medical Diagnoses</h3></div>
+                          <div class="form-row"><div class="form-label">Primary Diagnosis</div><div class="form-input">Autism Spectrum Disorder</div></div>
+                          <div class="form-row"><div class="form-label">Secondary Diagnosis</div><div class="form-input">ADHD</div></div>
+                        </div>
+                        <div class="form-section">
+                          <div class="section-title"><h3 style="color: #5C3DFF;">Allergies & Intolerances</h3></div>
+                          <div class="form-row"><div class="form-label">Food Allergies</div><div class="form-input">Peanuts, Gluten</div></div>
+                          <div class="form-row"><div class="form-label">Medication Allergies</div><div class="form-input">None</div></div>
+                        </div>
+                        <div class="form-section">
+                          <div class="section-title"><h3 style="color: #5C3DFF;">Regular Medication</h3></div>
+                          <div class="form-row"><div class="form-label">Daily Medication</div><div class="form-input">Methylphenidate 10mg</div></div>
+                          <div class="form-row"><div class="form-label">Supplements</div><div class="form-input">Multivitamins</div></div>
+                        </div>
+                        <div class="form-section">
+                          <div class="section-title"><h3 style="color: #5C3DFF;">PRN Medication</h3></div>
+                          <div class="form-row"><div class="form-label">Pain Relief</div><div class="form-input">Ibuprofen 200mg</div></div>
+                          <div class="form-row"><div class="form-label">Other PRNs</div><div class="form-input">None</div></div>
+                        </div>
+                        <div class="form-section">
+                          <div class="section-title"><h3 style="color: #5C3DFF;">Pain Communication Methods</h3></div>
+                          <div class="form-row"><div class="form-label">Verbal</div><div class="form-input">Uses simple phrases</div></div>
+                          <div class="form-row"><div class="form-label">Non-Verbal</div><div class="form-input">Facial expressions, PECS</div></div>
+                        </div>
+                      </div>
+                    `;
+                  } 
+                 else if (tab === 'medical') {
+  tabContent.innerHTML = `
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+      <div class="form-section">
+        <div class="section-title"><h3 style="color: #5C3DFF;">Medical Diagnoses</h3></div>
+        <div class="form-row"><div class="form-label">Primary Diagnosis</div><div class="form-input">Autism Spectrum Disorder</div></div>
+        <div class="form-row"><div class="form-label">Secondary Diagnosis</div><div class="form-input">Attention Deficit Hyperactivity Disorder (ADHD)</div></div>
+      </div>
+
+      <div class="form-section">
+        <div class="section-title"><h3 style="color: #5C3DFF;">Allergies & Intolerances</h3></div>
+        <div class="form-row"><div class="form-label">Food Allergies</div><div class="form-input">Peanuts, Gluten</div></div>
+        <div class="form-row"><div class="form-label">Medication Allergies</div><div class="form-input">None reported</div></div>
+      </div>
+
+      <div class="form-section">
+        <div class="section-title"><h3 style="color: #5C3DFF;">Regular Medication</h3></div>
+        <div class="form-row"><div class="form-label">Daily Medication</div><div class="form-input">Methylphenidate 10mg</div></div>
+        <div class="form-row"><div class="form-label">Supplements</div><div class="form-input">Multivitamins</div></div>
+      </div>
+
+      <div class="form-section">
+        <div class="section-title"><h3 style="color: #5C3DFF;">PRN Medication</h3></div>
+        <div class="form-row"><div class="form-label">Pain Relief</div><div class="form-input">Ibuprofen 200mg (as needed)</div></div>
+        <div class="form-row"><div class="form-label">Other PRNs</div><div class="form-input">None</div></div>
+      </div>
+
+      <div class="form-section">
+        <div class="section-title"><h3 style="color: #5C3DFF;">Pain Communication Methods</h3></div>
+        <div class="form-row"><div class="form-label">Verbal</div><div class="form-input">Yes - describes pain using words</div></div>
+        <div class="form-row"><div class="form-label">Non-Verbal</div><div class="form-input">Facial expressions, PECS cards</div></div>
+      </div>
+    </div>
+  `;
+}
+else if (tab === 'about') {
+                    tabContent.innerHTML = `
+                      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <!-- Original about tab content goes here (Personal, Contact, Education, Support) -->
+                        <div class="form-section">
+                          <div class="section-title"><h3 style="margin: 0;">Personal Information</h3></div>
+                          <div class="form-row"><div class="form-label">Full Name</div><div class="form-input">Sam Wilson</div></div>
+                          <div class="form-row"><div class="form-label">Date of Birth</div><div class="form-input">October 15, 2010</div></div>
+                          <div class="form-row"><div class="form-label">NI Number</div><div class="form-input">AB 12 34 56 C</div></div>
+                          <div class="form-row"><div class="form-label">Local Authority</div><div class="form-input">London Borough of Camden</div></div>
+                        </div>
+              
+                        <div class="form-section">
+                          <div class="section-title"><h3 style="margin: 0;">Contact Information</h3></div>
+                          <div class="form-row"><div class="form-label">Address</div><div class="form-input">123 Main Street, London, UK</div></div>
+                          <div class="form-row"><div class="form-label">Email</div><div class="form-input">parent@example.com</div></div>
+                          <div class="form-row"><div class="form-label">Phone</div><div class="form-input">+44 123 456 7890</div></div>
+                        </div>
+              
+                        <div class="form-section">
+                          <div class="section-title"><h3 style="margin: 0;">Education</h3></div>
+                          <div class="form-row"><div class="form-label">School/Day Centre</div><div class="form-input">Oakwood Special School</div></div>
+                          <div class="form-row"><div class="form-label">Education Status</div><div class="form-input">Full-time education</div></div>
+                          <div class="form-row"><div class="form-label">Education Coordinator</div><div class="form-input">Mrs. Johnson</div></div>
+                        </div>
+              
+                        <div class="form-section">
+                          <div class="section-title"><h3 style="margin: 0;">Support Network</h3></div>
+                          <div class="form-row"><div class="form-label">Key Worker</div><div class="form-input">David Peterson</div></div>
+                          <div class="form-row"><div class="form-label">Social Worker</div><div class="form-input">Emma Thompson</div></div>
+                          <div class="form-row"><div class="form-label">Speech Therapist</div><div class="form-input">Sarah Williams</div></div>
+                        </div>
+                      </div>
+                    `;
+                  } 
+                  
+                  
+                  
+                  else if (tab === 'proactive') {
+  tabContent.innerHTML = `
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+
+      <!-- E1: Just Right State -->
+      <div class="form-section">
+        <h3 style="color: #5C3DFF;">E1: Just Right State</h3>
+        <div class="form-row">
+          <div class="form-input">Smiling, calmly humming, making eye contact, and engaging in structured play</div>
+        </div>
+      </div>
+
+      <!-- E2: Helping Support -->
+      <div class="form-section">
+        <h3 style="color: #5C3DFF;">E2: Helping Support</h3>
+        <div class="form-row"><div class="form-label">Transitions</div><div class="form-input">Uses a visual timer and countdown cards</div></div>
+        <div class="form-row"><div class="form-label">Relationship-Building Strategies</div><div class="form-input">Responds well to positive reinforcement and shared interests</div></div>
+        <div class="form-row"><div class="form-label">Eating/Drinking Support</div><div class="form-input">Soft foods preferred; avoid mixed textures; requires adult supervision</div></div>
+        <div class="form-row"><div class="form-label">Favourite People/Places</div><div class="form-input">Miss Emma (TA), music room, and the library corner</div></div>
+      </div>
+
+      <!-- E3: Environment Needs -->
+      <div class="form-section">
+        <h3 style="color: #5C3DFF;">E3: Environment Needs</h3>
+        <div class="form-row"><div class="form-label">Noise/Sound/Lighting</div><div class="form-input">Prefers soft lighting, avoids fluorescent lights, and uses noise-cancelling headphones</div></div>
+        <div class="form-row"><div class="form-label">Sensory Sensitivities</div><div class="form-input">Dislikes strong smells and rough textures (tags, seams)</div></div>
+        <div class="form-row"><div class="form-label">Room Layout</div><div class="form-input">Needs visual boundaries and uncluttered personal space</div></div>
+      </div>
+
+      <!-- E4: Communication -->
+      <div class="form-section">
+        <h3 style="color: #5C3DFF;">E4: Communication</h3>
+        <div class="form-row"><div class="form-label">Greetings/Expressive Communication</div><div class="form-input">Uses “Hi” and “Bye” independently; expresses emotions through short phrases</div></div>
+        <div class="form-row"><div class="form-label">Yes/No Responses</div><div class="form-input">Nods or uses PECS Yes/No cards</div></div>
+        <div class="form-row"><div class="form-label">Choices & Understanding</div><div class="form-input">Benefits from visual supports and simplified two-option choices</div></div>
+      </div>
+
+      <!-- E5: Personal Care Routines -->
+      <div class="form-section">
+        <h3 style="color: #5C3DFF;">E5: Personal Care Routines</h3>
+        <div class="form-row"><div class="form-label">Routine Examples</div><div class="form-input">Morning: Brushing teeth with supervision. Bedtime: Storytime and soft music</div></div>
+        <div class="form-row"><div class="form-label">Equipment Used</div><div class="form-input">Toothbrush with grip, visual schedule board</div></div>
+      </div>
+
+      <!-- E6: Timetable & Attention -->
+      <div class="form-section">
+        <h3 style="color: #5C3DFF;">E6: Timetable & Attention</h3>
+        <div class="form-row"><div class="form-label">Activity Duration</div><div class="form-input">10–15 minutes per activity with breaks in between</div></div>
+        <div class="form-row"><div class="form-label">Options and Choices</div><div class="form-input">Offered a choice between drawing, music, or puzzles during breaks</div></div>
+      </div>
+
+      <!-- E7: Likes & Dislikes -->
+      <div class="form-section">
+        <h3 style="color: #5C3DFF;">E7: Likes & Dislikes</h3>
+        <div class="form-row"><div class="form-label">Likes</div><div class="form-input">Coloring, quiet corners, soft textures</div></div>
+        <div class="form-row"><div class="form-label">Dislikes</div><div class="form-input">Unexpected loud sounds, crowded spaces</div></div>
+      </div>
+
+    </div>
+  `;
+}
+
+                  else if (tab === 'about') {
+                    tabContent.innerHTML = `
+                      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div class="form-section">
+                          <h3 style="color: #5C3DFF;">Personal Information</h3>
+                          <div class="form-row"><div class="form-label">Full Name</div><div class="form-input">Sam Wilson</div></div>
+                          <div class="form-row"><div class="form-label">Date of Birth</div><div class="form-input">October 15, 2010</div></div>
+                          <div class="form-row"><div class="form-label">NI Number</div><div class="form-input">AB 12 34 56 C</div></div>
+                          <div class="form-row"><div class="form-label">Local Authority</div><div class="form-input">London Borough of Camden</div></div>
+                        </div>
+                        <div class="form-section">
+                          <h3 style="color: #5C3DFF;">Contact Information</h3>
+                          <div class="form-row"><div class="form-label">Address</div><div class="form-input">123 Main Street, London, UK</div></div>
+                          <div class="form-row"><div class="form-label">Email</div><div class="form-input">parent@example.com</div></div>
+                          <div class="form-row"><div class="form-label">Phone</div><div class="form-input">+44 123 456 7890</div></div>
+                        </div>
+                      </div>
+                    `;
+                  } else if (tab === 'education') {
+  tabContent.innerHTML = `
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+      <div class="form-section">
+        <h3 style="color: #5C3DFF;">Current Setting</h3>
+        <div class="form-row">
+          <div class="form-label">School/Day Centre</div>
+          <div class="form-input">Oakwood Special School</div>
+        </div>
+        <div class="form-row">
+          <div class="form-label">Education Format</div>
+          <div class="form-input">Full-time, in-person learning</div>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h3 style="color: #5C3DFF;">Activities They Enjoy</h3>
+        <div class="form-row">
+          <div class="form-input">Drawing cartoons, swimming, and playing memory games</div>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h3 style="color: #5C3DFF;">Future Aspirations</h3>
+        <div class="form-row">
+          <div class="form-input">Sam hopes to become a graphic designer and work with animation studios.</div>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h3 style="color: #5C3DFF;">Three Things They Like About Themselves</h3>
+        <div class="form-row">
+          <div class="form-input">Being kind, having a good memory, and being good at puzzles</div>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h3 style="color: #5C3DFF;">Three Things People Like About Them</h3>
+        <div class="form-row">
+          <div class="form-input">Their helpful nature, cheerful personality, and creativity</div>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h3 style="color: #5C3DFF;">How They Prefer to Interact & Build Rapport</h3>
+        <div class="form-row">
+          <div class="form-input">Sam enjoys one-on-one conversations with trusted adults and responds well to humor and visual aids.</div>
+        </div>
+      </div>
+    </div>
+  `;
+}
+else if (tab === 'behaviour') {
+  tabContent.innerHTML = `
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+      <div class="form-section">
+        <h3 style="color: #5C3DFF;">Key Triggers</h3>
+        <div class="form-row">
+          <div class="form-input">Loud environments, unexpected changes in routine, and strong smells</div>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h3 style="color: #5C3DFF;">Early Signs of Dysregulation</h3>
+        <div class="form-row">
+          <div class="form-input">Pacing, covering ears, fidgeting with clothes, and avoiding eye contact</div>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h3 style="color: #5C3DFF;">De-escalation Strategies</h3>
+        <div class="form-row">
+          <div class="form-input">Providing a quiet space, using a calm tone, offering sensory toys, and validating their feelings</div>
+        </div>
+      </div>
+    </div>
+  `;
+}
+else if (tab === 'returning') {
+  tabContent.innerHTML = `
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+      <div class="form-section">
+        <h3 style="color: #5C3DFF;">Communication during dysregulation</h3>
+        <div class="form-row">
+          <div class="form-input">
+            Sam benefits from simple and repetitive language during moments of distress. Visual prompts and the use of a calm tone help maintain engagement and reduce anxiety.
+          </div>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h3 style="color: #5C3DFF;">Environmental Changes needed</h3>
+        <div class="form-row">
+          <div class="form-input">
+            A designated quiet room with soft lighting, minimal noise, and access to calming items like a weighted blanket or sensory fidget tools supports Sam in returning to a regulated state.
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+}
+else if (tab === 'reactive') {
+  tabContent.innerHTML = `
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+      <div class="form-section">
+        <h3 style="color: #5C3DFF;">G1: Returning to Baseline</h3>
+        <div class="form-row">
+          <div class="form-input">
+            After a dysregulation episode, Sam benefits from quiet reflection time in a familiar space with low sensory input. A trusted adult should remain nearby, offering reassurance and limited verbal interaction.
+          </div>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h3 style="color: #5C3DFF;">G2: PRN Medication and Physical Intervention</h3>
+        <div class="form-row">
+          <div class="form-label">Administering Conditions</div>
+          <div class="form-input">
+            PRN medication may be administered when Sam shows escalating behaviors that do not respond to standard de-escalation strategies and present a risk of harm to self or others.
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-label">Team Teach (Physical Intervention) Details</div>
+          <div class="form-input">
+            <ul style="padding-left: 20px; margin: 0;">
+              <li>✓ Use of open hand guidance</li>
+              <li>✓ Two-person supportive stance if required</li>
+              <li>✓ Last resort intervention under trained supervision only</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+}
+else if (tab === 'behaviourInfo') {
+  tabContent.innerHTML = `
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+      <div class="form-section">
+        <h3 style="color: #5C3DFF;">Slow Triggers</h3>
+        <div class="form-row">
+          <div class="form-input">
+            Accumulated sensory input, lack of sleep, or extended periods of unstructured activity tend to gradually increase Sam's stress levels throughout the day.
+          </div>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h3 style="color: #5C3DFF;">Fast Triggers</h3>
+        <div class="form-row">
+          <div class="form-input">
+            Sudden loud noises, unexpected transitions, and physical touch without warning often lead to immediate behavioral escalation.
+          </div>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h3 style="color: #5C3DFF;">Behaviours Displayed</h3>
+        <div class="form-row">
+          <div class="form-input">
+            Sam may exhibit shouting, pushing, dropping to the floor, or fleeing from the room when overwhelmed or distressed.
+          </div>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h3 style="color: #5C3DFF;">Function of Behaviour</h3>
+        <div class="form-row">
+          <div class="form-input">
+            Many of the behaviors are a form of communication, typically expressing a need for control, escape from demands, or reduction of sensory overload.
+          </div>
+        </div>
+      </div>
+
+      <div class="form-section" style="grid-column: span 2;">
+        <h3 style="color: #5C3DFF;">Option to Add Multiple Behaviours</h3>
+        <div class="form-row">
+          <div class="form-input">
+            Team members can document emerging behaviors during sessions. New patterns should be discussed during review meetings and added to this profile for better support planning.
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+}
+else if (tab === 'debrief') {
+  tabContent.innerHTML = `
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+      <div class="form-section">
+        <h3 style="color: #5C3DFF;">Communication Post-Incident</h3>
+        <div class="form-row">
+          <div class="form-input">
+            After an incident, Sam responds best to a short cool-down period followed by calm, empathetic conversations using visuals. Staff are encouraged to validate feelings and clarify expectations.
+          </div>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h3 style="color: #5C3DFF;">Debrief Locations and Types</h3>
+        <div class="form-row">
+          <div class="form-input">
+            Debriefs typically occur in the sensory room or quiet area within 30 minutes of the incident. Verbal debriefs with key workers are preferred, with visual debrief tools used as needed.
+          </div>
+        </div>
+      </div>
+
+      <div class="form-section" style="grid-column: span 2;">
+        <h3 style="color: #5C3DFF;">Environmental Considerations</h3>
+        <div class="form-row">
+          <div class="form-input">
+            During debriefs, noise levels should be minimized, lighting dimmed, and unfamiliar staff should avoid interaction. A consistent, known adult should lead the process to provide emotional security.
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+}
+else if (tab === 'restrictive') {
+  tabContent.innerHTML = `
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+      <div class="form-section">
+        <h3 style="color: #5C3DFF;">Consent Details</h3>
+        <div class="form-row">
+          <div class="form-input">
+            Consent for the use of restrictive practices has been formally documented through meetings with parents and the multidisciplinary team. Written consent is held on file and reviewed every term.
+          </div>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h3 style="color: #5C3DFF;">Restraint/Restrictive Measures Used (J2)</h3>
+        <div class="form-row">
+          <div class="form-input">
+            On rare occasions, low-level physical redirection (e.g., open-hand guiding) and short-term exit-blocking are used to prevent harm. All interventions are logged and reviewed weekly by the behavioral support lead.
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+}
+else if (tab === 'circle') {
+  tabContent.innerHTML = `
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+      <div class="form-section">
+        <h3 style="color: #5C3DFF;">Visual Map of Important People and Preferences</h3>
+        <div class="form-row">
+          <div class="form-input">
+            Sam identifies their mother, teacher (Ms. Green), and therapist (Dr. Harris) as core members of their trusted circle. Preferred peers include Alex and Maya during group tasks. Sam enjoys time with animals, especially the school therapy dog.
+          </div>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h3 style="color: #5C3DFF;">Treatment Measures</h3>
+        <div class="form-row">
+          <div class="form-input">
+            <ul style="padding-left: 20px; margin: 0;">
+              <li>✓ Weekly occupational therapy for sensory regulation</li>
+              <li>✓ Bi-weekly speech and language therapy</li>
+              <li>✓ Monthly psychology sessions focusing on emotional resilience</li>
+              <li>✓ Home-school communication book for daily check-ins</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+}
+else if (tab === 'transitioning') {
+  tabContent.innerHTML = `
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+      <div class="form-section">
+        <h3 style="color: #5C3DFF;">Movement Preferences (Sit/Stand Transitions)</h3>
+        <div class="form-row">
+          <div class="form-input">
+            Sam prefers to transition slowly from sitting to standing, often requiring verbal countdowns or visual prompts. Sudden instructions may result in resistance or freezing behavior.
+          </div>
+        </div>
+      </div>
+  
+      <div class="form-section">
+        <h3 style="color: #5C3DFF;">Support Needed</h3>
+        <div class="form-row">
+          <div class="form-input">
+            Transitions are smoother when Sam has advanced notice (e.g., 5-minute warnings) and access to a fidget item. A familiar staff member should provide gentle physical cues if verbal prompts are ineffective.
+          </div>
+        </div>
+      </div>
+
+      <div class="form-section" style="grid-column: span 2;">
+        <h3 style="color: #5C3DFF;">Treatment Measures</h3>
+        <div class="form-row">
+          <div class="form-input">
+            <ul style="padding-left: 20px; margin: 0;">
+              <li>✓ Weekly physiotherapy to improve gross motor coordination</li>
+              <li>✓ Visual schedule to support predictability in daily transitions</li>
+              <li>✓ Use of step-by-step movement cards during transitions between rooms</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+}
+else if (tab === 'targets') {
+  tabContent.innerHTML = `
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+
+      <div class="form-section">
+        <h3 style="color: #5C3DFF;">M1: Targets and Progress</h3>
+        <div class="form-row">
+          <div class="form-label">Understanding Targets</div>
+          <div class="form-input">
+            Sam has been working on communication-based targets such as initiating greetings and requesting breaks appropriately.
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-label">Next Steps</div>
+          <div class="form-input">
+            Upcoming goals include increasing independence during structured tasks and generalizing communication skills across new environments.
+          </div>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h3 style="color: #5C3DFF;">M2: Preparing for Adulthood</h3>
+        <div class="form-row">
+          <div class="form-label">Transitions, Aspirations</div>
+          <div class="form-input">
+            Sam has expressed interest in working with animals. Staff are exploring vocational activities and transitional support services that align with this aspiration.
+          </div>
+        </div>
+      </div>
+
+      <div class="form-section" style="grid-column: span 2;">
+        <h3 style="color: #5C3DFF;">M3: Adulthood Skills</h3>
+        <div class="form-row">
+          <div class="form-label">Independent Living</div>
+          <div class="form-input">Sam practices simple meal prep and personal hygiene routines with adult support.</div>
+        </div>
+        <div class="form-row">
+          <div class="form-label">Relationships and Community</div>
+          <div class="form-input">Sam participates in small group outings and is learning to recognize social boundaries.</div>
+        </div>
+        <div class="form-row">
+          <div class="form-label">Employment</div>
+          <div class="form-input">Supported internships are being considered for future planning, with a focus on consistency and visual task breakdowns.</div>
+        </div>
+        <div class="form-row">
+          <div class="form-label">Good Health</div>
+          <div class="form-input">Sam follows a daily exercise plan monitored by the OT, and attends regular medical check-ups with a familiar adult.</div>
+        </div>
+      </div>
+
+      <div class="form-section" style="grid-column: span 2;">
+        <h3 style="color: #5C3DFF;">Treatment Measures</h3>
+        <div class="form-row">
+          <div class="form-input">
+            <ul style="padding-left: 20px; margin: 0;">
+              <li>✓ Weekly life skills sessions (e.g., laundry, cooking, money management)</li>
+              <li>✓ Community access training with social stories and peer support</li>
+              <li>✓ Termly reviews with parents and transition coordinator to monitor progress</li>
+              <li>✓ Visual timetables and checklists for task independence</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  `;
+}
+else if (tab === 'mca') {
+  tabContent.innerHTML = `
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+
+      <div class="form-section">
+        <h3 style="color: #5C3DFF;">Purpose and Benefits of a Support Passport</h3>
+        <div class="form-row">
+          <div class="form-input">
+            Sam's Support Passport is designed to clearly communicate their preferences, routines, and support needs across different environments. It enables consistent care and empowers Sam to make informed choices wherever possible.
+          </div>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h3 style="color: #5C3DFF;">Consent and Signatures</h3>
+        <div class="form-row">
+          <div class="form-input">
+            Consent for the information contained in the Support Passport has been provided by Sam’s legal guardian. Signatures from parents, key staff, and the SENCO are updated each term and stored securely.
+          </div>
+        </div>
+      </div>
+
+      <div class="form-section" style="grid-column: span 2;">
+        <h3 style="color: #5C3DFF;">List of Supporting Professionals</h3>
+        <div class="form-row">
+          <div class="form-input">
+            <ul style="padding-left: 20px; margin: 0;">
+              <li>✓ Occupational Therapist – Ms. Rachel Owens</li>
+              <li>✓ Speech and Language Therapist – Mr. Adam Clarke</li>
+              <li>✓ Educational Psychologist – Dr. Fiona James</li>
+              <li>✓ Key Worker – Sarah Nolan</li>
+              <li>✓ SENCO – Mr. John Preston</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-section" style="grid-column: span 2;">
+        <h3 style="color: #5C3DFF;">Treatment Measures</h3>
+        <div class="form-row">
+          <div class="form-input">
+            <ul style="padding-left: 20px; margin: 0;">
+              <li>✓ Regular capacity assessments for decision-making on health and education matters</li>
+              <li>✓ Visual decision-making tools (e.g., yes/no cards, emotion scales)</li>
+              <li>✓ Multi-agency planning reviews held every six months to update the passport</li>
+              <li>✓ Staff training on MCA principles and supported decision-making models</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  `;
+}
+else if (tab === 'ehcp') {
+  tabContent.innerHTML = `
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+
+      <div class="form-section">
+        <h3 style="color: #5C3DFF;">Section A: Views, Interests, Aspirations</h3>
+        <div class="form-row">
+          <div class="form-input">
+            Sam enjoys drawing, building blocks, and caring for animals. He aspires to work in a farm or zoo and values routine and calm environments.
+          </div>
+        </div>
+      </div>
+      
+      <div class="form-section">
+        <h3 style="color: #5C3DFF;">Section B: Special Educational Needs</h3>
+        <div class="form-row">
+          <div class="form-input">
+            Difficulties in expressive communication, cognitive processing delays, SEMH needs due to anxiety, and sensory sensitivities to sound and touch.
+          </div>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h3 style="color: #5C3DFF;">Section C: Health Needs</h3>
+        <div class="form-row">
+          <div class="form-input">
+            Diagnosed with mild autism and asthma. Requires medication support and assistance during high-sensory activities.
+          </div>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h3 style="color: #5C3DFF;">Section D: Social Care Needs</h3>
+        <div class="form-row">
+          <div class="form-input">
+            Requires adult supervision in the community, difficulty managing unfamiliar settings, and support with developing friendships.
+          </div>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h3 style="color: #5C3DFF;">Section E: SMART Outcomes</h3>
+        <div class="form-row">
+          <div class="form-input">
+            Within 6 months, Sam will independently initiate a structured task using a visual schedule in 4 out of 5 opportunities.
+          </div>
+        </div>
+      </div>
+      
+      <div class="form-section">
+        <h3 style="color: #5C3DFF;">Section F: Educational Provisions</h3>
+        <div class="form-row">
+          <div class="form-input">
+            Daily access to a teaching assistant, visual aids, and a quiet break-out room. Weekly speech and OT sessions provided on-site.
+          </div>
+        </div>
+      </div>
+      
+      <div class="form-section">
+        <h3 style="color: #5C3DFF;">Section H: Social Care Provisions</h3>
+        <div class="form-row">
+          <div class="form-input">
+            Access to a support worker 10 hours per week, community safety training, and structured weekend outings with a local peer group.
+          </div>
+        </div>
+      </div>
+      
+      <div class="form-section">
+        <h3 style="color: #5C3DFF;">Section I: School/Placement Details</h3>
+        <div class="form-row">
+          <div class="form-input">
+            Oakwood Special School, full-time provision, with an EHCP review scheduled annually.
+          </div>
+        </div>
+      </div>
+      
+      <div class="form-section">
+        <h3 style="color: #5C3DFF;">Section J: Personal Budget</h3>
+        <div class="form-row">
+          <div class="form-input">
+            £2,500 annually allocated for speech therapy, assistive technology, and additional SEN support resources.
+          </div>
+        </div>
+      </div>
+      
+      <div class="form-section">
+        <h3 style="color: #5C3DFF;">Section K: Appendices and Evidence Upload</h3>
+        <div class="form-row">
+          <div class="form-input">
+            Recent assessments, progress reports, and therapy logs can be uploaded here for review and future planning.
+          </div>
+        </div>
+      </div>
+
+      <div class="form-section" style="grid-column: span 2;">
+        <h3 style="color: #5C3DFF;">Ability to Upload Reports</h3>
+        <div class="form-row">
+          <div class="form-input">
+            <ul style="padding-left: 20px; margin: 0;">
+              <li>✓ Educational Psychology – Uploaded March 2024</li>
+              <li>✓ Speech and Language Therapy – Uploaded January 2024</li>
+              <li>✓ Occupational Therapy – Uploaded February 2024</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-section" style="grid-column: span 2;">
+        <h3 style="color: #5C3DFF;">Treatment Measures</h3>
+        <div class="form-row">
+          <div class="form-input">
+            <ul style="padding-left: 20px; margin: 0;">
+              <li>✓ Biweekly EHCP reviews with parent and SENCO</li>
+              <li>✓ Structured intervention plan aligned to SMART goals</li>
+              <li>✓ Cross-agency collaboration between education, health, and care teams</li>
+              <li>✓ Quarterly training for staff on EHCP delivery and documentation</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  `;
+}
+
+                  else {
+                    tabContent.innerHTML = `<div class="form-section"><h3 style="color: #5C3DFF;">${tab.replace("-", " ")}</h3><p>Content coming soon...</p></div>`;
+                  }
+                }
+            
+                window.onload = () => setTab('about');
+                
+           
     </script>
 </body>
 </html>
