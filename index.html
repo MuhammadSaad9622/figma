@@ -3770,6 +3770,61 @@ else if (tab === 'returning') {
         </div>
       </div>
     </div>
+    <div style="padding: 20px; font-family: Arial, sans-serif;">
+  <!-- Completion Notes -->
+  <p style="font-size: 13px; margin-bottom: 20px;">
+    <span style="color: orange; font-weight: bold;">● Completion Notes :</span>
+    Keep all information objective and concise. Complete as part of a MDT. Must be updated regularly and using PBS and ‘Just Right’ terminology and framework.
+  </p>
+
+  <!-- Table header -->
+  <div style="display: grid; grid-template-columns: 2fr 3fr 1fr 1fr; font-size: 14px; font-weight: 600; background: #f7f7f7; padding: 10px 15px; border-radius: 8px; margin-bottom: 5px;">
+    <div>#</div>
+    <div>Presented Behaviour</div>
+    <div>How To Support Me</div>
+    <div style="text-align: right;">Function</div>
+    <div style="text-align: right;">Action</div>
+  </div>
+
+  <!-- Table content row -->
+  <div style="display: grid; grid-template-columns: 2fr 3fr 1fr 1fr; font-size: 13px; padding: 10px 15px; align-items: center;">
+    <div>✔</div>
+    <div>List Last Updated On Monday, 10th of February 2025 at 11:09 AM By Mohammed Ahmed</div>
+    <div></div>
+    <div style="text-align: right;">
+      <button style="padding: 6px 12px; background: #aaa; color: white; border: none; border-radius: 6px; font-size: 13px; cursor: pointer;">
+        Add Item
+      </button>
+    </div>
+  </div>
+</div>
+
+    <div style="padding: 20px; background-color: #fff; border-radius: 10px; box-shadow: 0 1px 4px rgba(0,0,0,0.1); font-family: Arial, sans-serif;">
+      <h2 style="font-size: 20px; margin-bottom: 10px;">Communicating With Me</h2>
+      <p style="font-size: 13px; margin-bottom: 20px;">
+        <span style="color: orange; font-weight: bold;">● Completion Notes :</span> 
+        How to communicate with me now and what should you do differently from the "Being Pro-Active Positive" section?
+      </p>
+
+      <div style="display: flex; margin-bottom: 20px;">
+        <label style="width: 250px; font-weight: 500;">How to communicate with me now :</label>
+        <div style="flex: 1; border: 1px solid #ccc; border-radius: 8px; background: #f7f7f7; padding: 10px; min-height: 60px;"></div>
+      </div>
+
+      <div style="display: flex; margin-bottom: 20px;">
+        <label style="width: 250px; font-weight: 500;">Prompting Style, <br/>Prompting Level:</label>
+        <div style="flex: 1; border: 1px solid #ccc; border-radius: 8px; background: #f7f7f7; padding: 10px; min-height: 60px;"></div>
+      </div>
+
+      <div style="display: flex;">
+        <label style="width: 250px; font-weight: 500;">Communication Style :</label>
+        <div style="flex: 1; border: 1px solid #ccc; border-radius: 8px; background: #f7f7f7; padding: 10px; min-height: 60px;"></div>
+      </div>
+       <div style="display: flex;">
+        <label style="width: 250px; font-weight: 500;">What Need to change in my Environment :</label>
+        <div style="flex: 1; border: 1px solid #ccc; border-radius: 8px; background: #f7f7f7; padding: 10px; min-height: 60px;"></div>
+      </div>
+    </div>
   `;
 }
 else if (tab === 'reactive') {
@@ -3808,52 +3863,198 @@ else if (tab === 'reactive') {
 }
 else if (tab === 'behaviourInfo') {
   tabContent.innerHTML = `
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-      <div class="form-section">
-        <h3 style="color: #5C3DFF;">Slow Triggers</h3>
-        <div class="form-row">
-          <div class="form-input">
-            Accumulated sensory input, lack of sleep, or extended periods of unstructured activity tend to gradually increase Sam's stress levels throughout the day.
-          </div>
-        </div>
-      </div>
 
-      <div class="form-section">
-        <h3 style="color: #5C3DFF;">Fast Triggers</h3>
-        <div class="form-row">
-          <div class="form-input">
-            Sudden loud noises, unexpected transitions, and physical touch without warning often lead to immediate behavioral escalation.
-          </div>
-        </div>
-      </div>
+<div style="font-family: Arial, sans-serif; padding: 20px;">
+  <!-- Completion Notes -->
+  <p style="font-size: 14px; margin-bottom: 20px;">
+    <span style="color: red; font-weight: bold;">● Completion Notes :</span>
+    Please select the top 3 behaviours presented that consist strategies need to be implemented. Select the behaviours that will have the biggest impact on the individual’s quality of life or assistance with self-advocacy.
+  </p>
 
-      <div class="form-section">
-        <h3 style="color: #5C3DFF;">Behaviours Displayed</h3>
-        <div class="form-row">
-          <div class="form-input">
-            Sam may exhibit shouting, pushing, dropping to the floor, or fleeing from the room when overwhelmed or distressed.
-          </div>
-        </div>
-      </div>
+  <!-- Behaviour Section -->
+  <h3 style="margin-bottom: 10px;">Behaviour 1</h3>
 
-      <div class="form-section">
-        <h3 style="color: #5C3DFF;">Function of Behaviour</h3>
-        <div class="form-row">
-          <div class="form-input">
-            Many of the behaviors are a form of communication, typically expressing a need for control, escape from demands, or reduction of sensory overload.
-          </div>
-        </div>
-      </div>
+  <!-- Behaviour Name Input -->
+  <div style="display: flex; align-items: center; margin-bottom: 30px;">
+    <label style="font-weight: 500; width: 180px;">First Behaviour Name :</label>
+    <input
+      type="text"
+      placeholder="Please enter the behaviour in here."
+      style="flex: 1; padding: 8px 12px; font-size: 14px; border: 1px solid #ccc; border-radius: 8px;"
+    />
+  </div>
 
-      <div class="form-section" style="grid-column: span 2;">
-        <h3 style="color: #5C3DFF;">Option to Add Multiple Behaviours</h3>
-        <div class="form-row">
-          <div class="form-input">
-            Team members can document emerging behaviors during sessions. New patterns should be discussed during review meetings and added to this profile for better support planning.
-          </div>
-        </div>
+  <!-- Trigger Flowchart -->
+  <div style="display: flex; justify-content: space-between; gap: 15px; align-items: center; margin-bottom: 30px;">
+    <!-- Slow Triggers -->
+    <div style="text-align: center;">
+      <p style="font-weight: 600;">Slow Triggers</p>
+      <div style="padding: 20px; min-width: 150px; background: #f9f9f9; border: 1px solid #ccc; border-radius: 8px;">
+        Slow Triggers
       </div>
     </div>
+    <span style="font-size: 24px;">➡</span>
+
+    <!-- Fast Triggers -->
+    <div style="text-align: center;">
+      <p style="font-weight: 600;">Fast Triggers</p>
+      <div style="padding: 20px; min-width: 150px; background: #f9f9f9; border: 1px solid #ccc; border-radius: 8px;">
+        Fast Triggers
+      </div>
+    </div>
+    <span style="font-size: 24px;">➡</span>
+
+    <!-- Behaviour Displayed -->
+    <div style="text-align: center;">
+      <p style="font-weight: 600;">Behaviour Displayed</p>
+      <div style="padding: 20px; min-width: 150px; background: #f9f9f9; border: 1px solid #ccc; border-radius: 8px;">
+        Behaviour Displayed
+      </div>
+    </div>
+    <span style="font-size: 24px;">➡</span>
+
+    <!-- Function -->
+    <div style="text-align: center;">
+      <p style="font-weight: 600;">Function</p>
+      <div style="padding: 20px; min-width: 150px; background: #f9f9f9; border: 1px solid #ccc; border-radius: 8px;">
+        Function (What did the person gain?)
+      </div>
+    </div>
+  </div>
+
+  <!-- A Better Request -->
+  <div style="display: flex; flex-direction: column; align-items: center;">
+    <p style="font-weight: 600;">A Better Request</p>
+    <div style="padding: 20px; min-width: 180px; background: #f9f9f9; border: 1px solid #ccc; border-radius: 8px;">
+      A better way to request
+    </div>
+    <div style="font-size: 24px; margin-top: 5px;">⬆</div>
+  </div>
+</div>
+<div style="font-family: Arial, sans-serif; padding: 20px;">
+  <!-- Behaviour Title -->
+  <h3 style="margin-bottom: 10px;">Behaviour 2</h3>
+
+  <!-- Behaviour Name Input -->
+  <div style="display: flex; align-items: center; margin-bottom: 30px;">
+    <label style="font-weight: 500; width: 200px;">Second Behaviour Name :</label>
+    <input
+      type="text"
+      placeholder="Please enter the behaviour in here."
+      style="flex: 1; padding: 8px 12px; font-size: 14px; border: 1px solid #ccc; border-radius: 8px;"
+    />
+  </div>
+
+  <!-- Trigger Flow Row -->
+  <div style="display: flex; justify-content: space-between; gap: 15px; align-items: center; margin-bottom: 30px;">
+    <!-- Slow Triggers -->
+    <div style="text-align: center;">
+      <p style="font-weight: 600;">Slow Triggers</p>
+      <div style="padding: 20px; min-width: 150px; background: #f9f9f9; border: 1px solid #ccc; border-radius: 8px;">
+        Slow Triggers
+      </div>
+    </div>
+    <span style="font-size: 24px;">➡</span>
+
+    <!-- Fast Triggers -->
+    <div style="text-align: center;">
+      <p style="font-weight: 600;">Fast Triggers</p>
+      <div style="padding: 20px; min-width: 150px; background: #f9f9f9; border: 1px solid #ccc; border-radius: 8px;">
+        Fast Triggers
+      </div>
+    </div>
+    <span style="font-size: 24px;">➡</span>
+
+    <!-- Behaviour Displayed -->
+    <div style="text-align: center;">
+      <p style="font-weight: 600;">Behaviour Displayed</p>
+      <div style="padding: 20px; min-width: 150px; background: #f9f9f9; border: 1px solid #ccc; border-radius: 8px;">
+        Behaviours Displayed
+      </div>
+    </div>
+    <span style="font-size: 24px;">➡</span>
+
+    <!-- Function -->
+    <div style="text-align: center;">
+      <p style="font-weight: 600;">Function</p>
+      <div style="padding: 20px; min-width: 180px; background: #f9f9f9; border: 1px solid #ccc; border-radius: 8px;">
+        Function (What did the person gain?)
+      </div>
+    </div>
+  </div>
+
+  <!-- A Better Request -->
+  <div style="display: flex; flex-direction: column; align-items: center;">
+    <p style="font-weight: 600;">A Better Request</p>
+    <div style="padding: 20px; min-width: 180px; background: #f9f9f9; border: 1px solid #ccc; border-radius: 8px;">
+      A better way to request
+    </div>
+    <div style="font-size: 24px; margin-top: 5px;">⬆</div>
+  </div>
+</div>
+<div style="font-family: Arial, sans-serif; padding: 20px;">
+  <!-- Behaviour Title -->
+  <h3 style="margin-bottom: 10px;">Behaviour 3</h3>
+
+  <!-- Behaviour Name Input -->
+  <div style="display: flex; align-items: center; margin-bottom: 30px;">
+    <label style="font-weight: 500; width: 200px;">Third Behaviour Name :</label>
+    <input
+      type="text"
+      placeholder="Please enter the behaviour in here."
+      style="flex: 1; padding: 8px 12px; font-size: 14px; border: 1px solid #ccc; border-radius: 8px;"
+    />
+  </div>
+
+  <!-- Trigger Flow Row -->
+  <div style="display: flex; justify-content: space-between; gap: 15px; align-items: center; margin-bottom: 30px;">
+    <!-- Slow Triggers -->
+    <div style="text-align: center;">
+      <p style="font-weight: 600;">Slow Triggers</p>
+      <div style="padding: 20px; min-width: 150px; background: #f9f9f9; border: 1px solid #ccc; border-radius: 8px;">
+        Slow Triggers
+      </div>
+    </div>
+    <span style="font-size: 24px;">➡</span>
+
+    <!-- Fast Triggers -->
+    <div style="text-align: center;">
+      <p style="font-weight: 600;">Fast Triggers</p>
+      <div style="padding: 20px; min-width: 150px; background: #f9f9f9; border: 1px solid #ccc; border-radius: 8px;">
+        Fast Triggers
+      </div>
+    </div>
+    <span style="font-size: 24px;">➡</span>
+
+    <!-- Behaviour Displayed -->
+    <div style="text-align: center;">
+      <p style="font-weight: 600;">Behaviour Displayed</p>
+      <div style="padding: 20px; min-width: 150px; background: #f9f9f9; border: 1px solid #ccc; border-radius: 8px;">
+        Behaviours Displayed
+      </div>
+    </div>
+    <span style="font-size: 24px;">➡</span>
+
+    <!-- Function -->
+    <div style="text-align: center;">
+      <p style="font-weight: 600;">Function</p>
+      <div style="padding: 20px; min-width: 180px; background: #f9f9f9; border: 1px solid #ccc; border-radius: 8px;">
+        Function (What did the person gain?)
+      </div>
+    </div>
+  </div>
+
+  <!-- A Better Request -->
+  <div style="display: flex; flex-direction: column; align-items: center;">
+    <p style="font-weight: 600;">A Better Request</p>
+    <div style="padding: 20px; min-width: 180px; background: #f9f9f9; border: 1px solid #ccc; border-radius: 8px;">
+      A better way to request
+    </div>
+    <div style="font-size: 24px; margin-top: 5px;">⬆</div>
+  </div>
+</div>
+
+
   `;
 }
 else if (tab === 'debrief') {
@@ -3890,25 +4091,150 @@ else if (tab === 'debrief') {
 }
 else if (tab === 'restrictive') {
   tabContent.innerHTML = `
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-      <div class="form-section">
-        <h3 style="color: #5C3DFF;">Consent Details</h3>
-        <div class="form-row">
-          <div class="form-input">
-            Consent for the use of restrictive practices has been formally documented through meetings with parents and the multidisciplinary team. Written consent is held on file and reviewed every term.
-          </div>
-        </div>
-      </div>
+   
+<div style="padding: 20px; font-family: Arial, sans-serif; background: #fff; border-radius: 10px; box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);">
 
-      <div class="form-section">
-        <h3 style="color: #5C3DFF;">Restraint/Restrictive Measures Used (J2)</h3>
-        <div class="form-row">
-          <div class="form-input">
-            On rare occasions, low-level physical redirection (e.g., open-hand guiding) and short-term exit-blocking are used to prevent harm. All interventions are logged and reviewed weekly by the behavioral support lead.
-          </div>
-        </div>
-      </div>
+  <!-- Section Title -->
+  <h3 style="margin-bottom: 10px;">Restraint And Restrictive</h3>
+
+  <!-- Completion Notes -->
+  <p style="font-size: 13px; margin-bottom: 25px;">
+    <span style="color: orange; font-weight: bold;">● Completion Notes :</span>
+    This section must be completed with the learner prior to joining college or as a new restrictive practice is considered and submitted. Ensure staff are involved. Note any restrictive practices that are applicable to the learner; including fobbed doors, 1:1 support staff, medication, restrictive interventions that may be used, etc.
+  </p>
+
+  <!-- Consent Heading -->
+  <h4 style="margin-bottom: 10px;">Consent</h4>
+
+  <!-- Consent Text -->
+  <p style="text-align: center; font-size: 15px; margin-bottom: 20px;">
+    <strong>Consent:</strong> I have been spoken to about the use of restrictions and restraints below<br/>
+    and have had explained to me why they are necessary.
+  </p>
+
+  <!-- Icons (tick and cross) -->
+  <div style="text-align: center; margin-bottom: 25px;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Yes_check.svg/1024px-Yes_check.svg.png" alt="Check" style="height: 40px; margin-right: 20px;">
+    <img src="https://cdn.vectorstock.com/i/1000v/90/24/red-cross-mark-icon-vector-42639024.jpg" style="height: 40px;">
+
+  </div>
+
+  <!-- Signature Dropdown -->
+  <div style="display: flex; align-items: center; margin-bottom: 15px;">
+    <label style="width: 100px;">Signed By :</label>
+    <select style="flex: 1; padding: 8px 12px; border-radius: 6px; border: 1px solid #ccc; font-size: 14px;">
+      <option value="">-- Please Select --</option>
+      <option value="learner">Learner</option>
+      <option value="parent">Parent/Guardian</option>
+      <option value="staff">Staff</option>
+    </select>
+  </div>
+
+  <!-- Date Input -->
+  <div style="display: flex; align-items: center;">
+    <label style="width: 100px;">Date Signed :</label>
+    <input type="text" placeholder="dd/mm/yyyy" style="flex: 1; padding: 8px 12px; border-radius: 6px; border: 1px solid #ccc; font-size: 14px;">
+  </div>
+
+</div>
+</br>
+<div style="padding: 20px; font-family: Arial, sans-serif; background: #fff; border-radius: 10px; box-shadow: 0 1px 6px rgba(0,0,0,0.1);">
+
+  <!-- Blanket Restrictions Row -->
+  <div style="display: flex; margin-bottom: 20px;">
+    <label style="width: 200px; font-weight: bold;">Blanket Restrictions :</label>
+    <div style="flex: 1; display: flex; flex-wrap: wrap; gap: 20px;">
+      <label><input type="checkbox" /> Support Staff</label>
+      <label><input type="checkbox" /> Daily number of hours at college</label>
+      <label><input type="checkbox" /> Lunch times at a set time</label>
     </div>
+  </div>
+
+  <!-- Environmental Restrictions Row -->
+  <div style="display: flex; margin-bottom: 20px;">
+    <label style="width: 200px; font-weight: bold;">Environmental :</label>
+    <div style="flex: 1; display: flex; flex-wrap: wrap; gap: 20px;">
+      <label><input type="checkbox" /> Fobs to access certain doors or floors</label>
+      <label><input type="checkbox" /> Unable to leave the building as and when</label>
+      <label><input type="checkbox" /> Limited to one classroom or floor</label>
+      <label><input type="checkbox" /> Secure garden</label>
+      <label><input type="checkbox" /> Quiet room</label>
+    </div>
+  </div>
+
+  <!-- Team Teach Row -->
+  <div style="display: flex;">
+    <label style="width: 200px; font-weight: bold;">Team Teach :</label>
+    <div style="flex: 1; display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;">
+      <label><input type="checkbox" /> Manual Manipulation Of The Jaw</label>
+      <label><input type="checkbox" /> Opening The Oyster</label>
+      <label><input type="checkbox" /> Double Elbow</label>
+      <label><input type="checkbox" /> Single Elbow</label>
+
+      <label><input type="checkbox" /> Knuckle Slide</label>
+      <label><input type="checkbox" /> Knuckle Squeeze</label>
+      <label><input type="checkbox" /> Figure Four</label>
+      <label><input type="checkbox" /> Friendly Hold</label>
+
+      <label><input type="checkbox" /> Tube Grips</label>
+      <label><input type="checkbox" /> Distraction</label>
+      <label><input type="checkbox" /> Single Elbow (In Chair)</label>
+      <label><input type="checkbox" /> Cross Over</label>
+
+      <label><input type="checkbox" /> Drop Elbow</label>
+      <label><input type="checkbox" /> Pump</label>
+      <label><input type="checkbox" /> Conductor</label>
+      <label><input type="checkbox" /> Clock</label>
+
+      <label><input type="checkbox" /> Windmill</label>
+      <label><input type="checkbox" /> Snake</label>
+    </div>
+  </div>
+</div>
+</br>
+<div style="padding: 20px; font-family: Arial, sans-serif; background: #fff; border-radius: 10px; box-shadow: 0 1px 6px rgba(0,0,0,0.1);">
+  <div style="display: flex; align-items: flex-start;">
+    <label style="width: 150px; font-weight: bold; margin-top: 6px;">Medical / PRN :</label>
+    <textarea 
+      rows="4" 
+      style="flex: 1; padding: 10px; border: 1px solid #ccc; border-radius: 8px; background: linear-gradient(#f9f9f9, #eaeaea); box-shadow: inset 0 1px 2px rgba(0,0,0,0.1); resize: vertical;"
+    ></textarea>
+  </div>
+</div>
+
+</br>
+<div style="padding: 20px; font-family: Arial, sans-serif; background: #fff; border-radius: 10px; box-shadow: 0 1px 6px rgba(0,0,0,0.1);">
+
+  <!-- Section Heading -->
+  <!-- Completion Notes -->
+  <p style="font-size: 13px; margin-bottom: 20px;">
+    <span style="color: orange; font-weight: bold;">● Completion Notes :</span>
+    This section must be completed with the learner prior to joining college or as a new restrictive practice is considered as a support strategy. Ensure SaLT are included. MCA maybe necessary. List all restrictive practices that are applicable to the learner; including fobbed doors, 1:1 support staff, medication, restrictive interventions that may be used, etc.
+  </p>
+
+  <!-- Subheading -->
+  <h4 style="margin: 30px 0 10px;">Restrictions Or Restraints That Are Applicable To Me - Continued</h4>
+
+  <!-- Table Header -->
+  <div style="display: grid; grid-template-columns: 0.5fr 2fr 2fr 1.5fr 1.5fr 1fr; background: #f7f7f7; font-weight: bold; font-size: 14px; padding: 10px 15px; border-radius: 6px; margin-bottom: 10px;">
+    <div>#</div>
+    <div>Restrictive Or Restraint Type</div>
+    <div>Plan To Reduce</div>
+    <div>Actioned By</div>
+    <div>Review Date</div>
+    <div>Action</div>
+  </div>
+
+  <!-- Button Row -->
+  <div style="text-align: right; margin-top: 15px;">
+    <button style="padding: 6px 16px; background: #aaa; color: white; border: none; border-radius: 6px; font-size: 14px; cursor: not-allowed;">
+      Add Item
+    </button>
+  </div>
+
+</div>
+
+
   `;
 }
 else if (tab === 'circle') {
@@ -3937,6 +4263,125 @@ else if (tab === 'circle') {
         </div>
       </div>
     </div>
+
+
+    <div style="padding: 20px; font-family: Arial, sans-serif; background-color: #fff; border-radius: 10px; box-shadow: 0 1px 6px rgba(0,0,0,0.1);">
+
+  <!-- Header Row -->
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+    <h3 style="margin: 0;">Circles Of Trust And Likes</h3>
+    <button style="background-color: #28a745; color: white; border: none; padding: 8px 16px; border-radius: 6px; font-size: 14px; cursor: pointer;">
+      Reports ▼
+    </button>
+  </div>
+
+  <!-- Completion Notes -->
+  <p style="font-size: 13px; margin-top: 5px;">
+    <span style="color: orange; font-weight: bold;">● Completion Notes :</span>
+    Please add photos to the boxes below or words. Label/name the relationship to the learner.
+  </p>
+</div>
+</br>
+
+<div style="position: relative; width: 600px; height: 600px; margin: 40px auto; font-family: Arial, sans-serif;">
+
+  <!-- Outer black circle (likes) -->
+  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 2px solid black; border-radius: 50%; z-index: 0;"></div>
+
+  <!-- Inner black circle (important people) -->
+  <div style="position: absolute; top: 100px; left: 100px; width: 400px; height: 400px; border: 2px solid black; border-radius: 50%; z-index: 0;"></div>
+
+  <!-- Outer Circle: Likes -->
+  <div style="position: absolute; top: 0%; left: 50%; transform: translate(-50%, -50%); z-index: 1;">
+    <div class="circle-box blue">Picture of likes:<br><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Icon_Camera.svg/48px-Icon_Camera.svg.png" height="25"/></div>
+  </div>
+  <div style="position: absolute; top: 14%; left: 86%; transform: translate(-50%, -50%); z-index: 1;">
+    <div class="circle-box blue">Picture of likes:<br><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Icon_Camera.svg/48px-Icon_Camera.svg.png" height="25"/></div>
+  </div>
+  <div style="position: absolute; top: 50%; left: 100%; transform: translate(-50%, -50%); z-index: 1;">
+    <div class="circle-box blue">Picture of likes:<br><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Icon_Camera.svg/48px-Icon_Camera.svg.png" height="25"/></div>
+  </div>
+  <div style="position: absolute; top: 86%; left: 86%; transform: translate(-50%, -50%); z-index: 1;">
+    <div class="circle-box blue">Picture of likes:<br><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Icon_Camera.svg/48px-Icon_Camera.svg.png" height="25"/></div>
+  </div>
+  <div style="position: absolute; top: 100%; left: 50%; transform: translate(-50%, -50%); z-index: 1;">
+    <div class="circle-box blue">Picture of likes:<br><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Icon_Camera.svg/48px-Icon_Camera.svg.png" height="25"/></div>
+  </div>
+  <div style="position: absolute; top: 86%; left: 14%; transform: translate(-50%, -50%); z-index: 1;">
+    <div class="circle-box blue">Picture of likes:<br><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Icon_Camera.svg/48px-Icon_Camera.svg.png" height="25"/></div>
+  </div>
+  <div style="position: absolute; top: 50%; left: 0%; transform: translate(-50%, -50%); z-index: 1;">
+    <div class="circle-box blue">Picture of likes:<br><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Icon_Camera.svg/48px-Icon_Camera.svg.png" height="25"/></div>
+  </div>
+  <div style="position: absolute; top: 14%; left: 14%; transform: translate(-50%, -50%); z-index: 1;">
+    <div class="circle-box blue">Picture of likes:<br><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Icon_Camera.svg/48px-Icon_Camera.svg.png" height="25"/></div>
+  </div>
+
+ <!-- Inner Circle: Important People (evenly spaced) -->
+<div style="position: absolute; top: 17%; left: 50%; transform: translate(-50%, -50%); z-index: 1;">
+  <div class="circle-box red">Picture of important person or people<br>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Group_people_icon.png/40px-Group_people_icon.png" height="25" />
+  </div>
+</div>
+<div style="position: absolute; top: 32%; left: 76%; transform: translate(-50%, -50%); z-index: 1;">
+  <div class="circle-box red">Picture of important person or people<br>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Group_people_icon.png/40px-Group_people_icon.png" height="25" />
+  </div>
+</div>
+<div style="position: absolute; top: 68%; left: 76%; transform: translate(-50%, -50%); z-index: 1;">
+  <div class="circle-box red">Picture of important person or people<br>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Group_people_icon.png/40px-Group_people_icon.png" height="25" />
+  </div>
+</div>
+<div style="position: absolute; top: 83%; left: 50%; transform: translate(-50%, -50%); z-index: 1;">
+  <div class="circle-box red">Picture of important person or people<br>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Group_people_icon.png/40px-Group_people_icon.png" height="25" />
+  </div>
+</div>
+<div style="position: absolute; top: 68%; left: 24%; transform: translate(-50%, -50%); z-index: 1;">
+  <div class="circle-box red">Picture of important person or people<br>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Group_people_icon.png/40px-Group_people_icon.png" height="25" />
+  </div>
+</div>
+<div style="position: absolute; top: 32%; left: 24%; transform: translate(-50%, -50%); z-index: 1;">
+  <div class="circle-box red">Picture of important person or people<br>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Group_people_icon.png/40px-Group_people_icon.png" height="25" />
+  </div>
+</div>
+
+  <!-- Center: Picture of Me -->
+  <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 140px; height: 140px; background: #fff; border: 2px solid #ccc; border-radius: 10px; text-align: center; padding: 10px; box-shadow: 0 0 6px rgba(0,0,0,0.1); z-index: 2;">
+    <div style="font-weight: bold; margin-bottom: 5px;">Picture of me.</div>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Unknown_person.png/60px-Unknown_person.png" height="50"/>
+  </div>
+</div>
+
+<!-- Styling -->
+<style>
+  .circle-box {
+    width: 120px;
+    height: 100px;
+    background: #fff;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 12px;
+    padding: 10px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .circle-box.blue {
+    border: 2px solid #4a90e2;
+  }
+
+  .circle-box.red {
+    border: 2px solid #e91e63;
+  }
+</style>
+
   `;
 }
 else if (tab === 'transitioning') {
@@ -4094,6 +4539,49 @@ else if (tab === 'mca') {
       </div>
 
     </div>
+
+<div style="padding: 20px; font-family: Arial, sans-serif; background-color: #fff; border-radius: 10px; box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1); max-width: 800px; margin: auto;">
+
+  <h3 style="margin-bottom: 20px;">Equipment Section</h3>
+
+  <!-- Trialled Equipment -->
+  <h4 style="margin-top: 20px;">Equipment Trialled (and why it wasn’t successful)</h4>
+  
+  <div style="border: 1px solid #ccc; padding: 15px; border-radius: 8px; margin-bottom: 30px;">
+    <div style="margin-bottom: 15px;">
+      <label style="display: block; font-weight: bold;">Equipment Name:</label>
+      <input type="text" placeholder="Enter equipment name" style="width: 100%; padding: 8px; border-radius: 6px; border: 1px solid #ccc;">
+    </div>
+
+    <div style="margin-bottom: 15px;">
+      <label style="display: block; font-weight: bold;">Reason it wasn’t successful:</label>
+      <textarea placeholder="Explain why it wasn’t successful" style="width: 100%; padding: 8px; border-radius: 6px; border: 1px solid #ccc;" rows="4"></textarea>
+    </div>
+
+    <div>
+      <label style="display: block; font-weight: bold;">Date Trialled:</label>
+      <input type="date" style="padding: 8px; border-radius: 6px; border: 1px solid #ccc;">
+    </div>
+  </div>
+
+  <!-- Currently Used Equipment -->
+  <h4 style="margin-top: 20px;">Equipment Currently Being Used</h4>
+
+  <div style="border: 1px solid #ccc; padding: 15px; border-radius: 8px;">
+    <div style="margin-bottom: 15px;">
+      <label style="display: block; font-weight: bold;">Equipment Name:</label>
+      <input type="text" placeholder="Enter equipment name" style="width: 100%; padding: 8px; border-radius: 6px; border: 1px solid #ccc;">
+    </div>
+
+    <div>
+      <label style="display: block; font-weight: bold;">Notes:</label>
+      <textarea placeholder="Any additional notes or usage context" style="width: 100%; padding: 8px; border-radius: 6px; border: 1px solid #ccc;" rows="4"></textarea>
+    </div>
+  </div>
+
+</div>
+
+
   `;
 }
 else if (tab === 'ehcp') {
