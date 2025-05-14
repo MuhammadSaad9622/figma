@@ -3520,7 +3520,15 @@
                   } 
                  else if (tab === 'medical') {
   tabContent.innerHTML = `
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+   
+    
+  `;
+  
+}
+if (tab === 'medical') {
+  tabContent.innerHTML = `
+    <!-- Existing medical sections here... -->
+     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
       <div class="form-section">
         <div class="section-title"><h3 style="color: #5C3DFF;">Medical Diagnoses</h3></div>
         <div class="form-row"><div class="form-label">Primary Diagnosis</div><div class="form-input">Autism Spectrum Disorder</div></div>
@@ -3551,8 +3559,87 @@
         <div class="form-row"><div class="form-label">Non-Verbal</div><div class="form-input">Facial expressions, PECS cards</div></div>
       </div>
     </div>
+
+    <!-- Weight Chart Section -->
+    <div class="form-section">
+      <div class="section-title">
+        <h3 style="color: #5C3DFF;">Weight Chart</h3>
+      </div>
+      <div style="display: flex; gap: 40px; flex-wrap: wrap;">
+        <!-- Student BMI Chart -->
+        <div style="flex: 1; min-width: 300px;">
+          <canvas id="bmiChart"></canvas>
+        </div>
+
+        <!-- Student Weight Chart -->
+        <div style="flex: 1; min-width: 300px;">
+          <canvas id="weightChart"></canvas>
+        </div>
+      </div>
+    </div>
   `;
+
+  // Chart.js rendering logic
+  setTimeout(() => {
+    const bmiCtx = document.getElementById('bmiChart').getContext('2d');
+    new Chart(bmiCtx, {
+      type: 'line',
+      data: {
+        labels: ['30/11/2022', '03/01/2023', '11/01/2023', '18/01/2023', '26/01/2023', '02/03/2023', '11/05/2023', '11/09/2024'],
+        datasets: [{
+          label: 'Student BMI',
+          data: [16.2, 15.9, 16.1, 15.7, 15.5, 15.8, 16.7, 17.2],
+          borderColor: '#D32F2F',
+          backgroundColor: 'rgba(211, 47, 47, 0.1)',
+          fill: true,
+          tension: 0.3,
+          pointRadius: 5,
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true,
+            title: { display: true, text: 'BMI' }
+          },
+          x: {
+            title: { display: true, text: 'Date' }
+          }
+        }
+      }
+    });
+
+    const weightCtx = document.getElementById('weightChart').getContext('2d');
+    new Chart(weightCtx, {
+      type: 'line',
+      data: {
+        labels: ['30/11/2022', '03/01/2023', '11/01/2023', '18/01/2023', '26/01/2023', '02/03/2023', '11/05/2023', '11/09/2024'],
+        datasets: [{
+          label: 'Student Weight (KG)',
+          data: [45, 42, 43, 41, 40, 42, 46, 48],
+          borderColor: '#1976D2',
+          backgroundColor: 'rgba(25, 118, 210, 0.1)',
+          fill: true,
+          tension: 0.3,
+          pointRadius: 5,
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true,
+            title: { display: true, text: 'Weight' }
+          },
+          x: {
+            title: { display: true, text: 'Date' }
+          }
+        }
+      }
+    });
+  }, 100); // Delay to ensure canvas elements are mounted
+  
 }
+
 else if (tab === 'about') {
                     tabContent.innerHTML = `
                       <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
@@ -4718,5 +4805,7 @@ else if (tab === 'ehcp') {
                 
            
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 </body>
 </html>
